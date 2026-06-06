@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-top">
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
+      <a href="find-agent.html" class="navbar__link">Agents</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <a href="post-listing.html" class="btn btn--accent btn--sm"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+      <div class="dropdown">
+        <button class="avatar-btn" data-dropdown-trigger aria-label="Account menu" aria-haspopup="true" aria-expanded="false">JD</button>
+        <div class="dropdown__menu" role="menu">
+          <a href="dashboard.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Dashboard</a>
+          <a href="my-listings.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+          <a href="favourites.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+          <a href="messages.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+          <div class="dropdown__divider"></div>
+          <a href="profile.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+          <button class="dropdown__item is-danger" role="menuitem"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</button>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
+    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
+    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
+    <a href="messages.html" class="btn btn--ghost" style="width:100%">Messages</a>
+    <hr class="divider">
+    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+  </div>
+</div>
+<div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="Dashboard navigation">
+      <a href="dashboard.html"      class="dash-nav-item "><i class="fa-solid fa-gauge" aria-hidden="true"></i> Overview</a>
+      <a href="my-listings.html"    class="dash-nav-item "><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+      <a href="favourites.html"     class="dash-nav-item "><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+      <a href="saved-searches.html" class="dash-nav-item "><i class="fa-solid fa-bell" aria-hidden="true"></i> Saved Searches</a>
+      <a href="messages.html"       class="dash-nav-item "><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+      <a href="profile.html"        class="dash-nav-item is-active"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+      <hr class="divider">
+      <a href="post-listing.html" class="btn btn--accent btn--sm" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    </aside>
+  <main class="dashboard-main">
+      <nav class="mobile-dash-nav" aria-label="Dashboard sections">
+        <a href="dashboard.html"      class="dash-nav-item "><i class="fa-solid fa-gauge" aria-hidden="true"></i> Overview</a>
+        <a href="my-listings.html"    class="dash-nav-item "><i class="fa-solid fa-list" aria-hidden="true"></i> Listings</a>
+        <a href="favourites.html"     class="dash-nav-item "><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+        <a href="saved-searches.html" class="dash-nav-item "><i class="fa-solid fa-bell" aria-hidden="true"></i> Searches</a>
+        <a href="messages.html"       class="dash-nav-item "><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+        <a href="profile.html"        class="dash-nav-item is-active"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+      </nav>
+      <div class="dashboard-header">
+        <h1>Profile &amp; Settings</h1>
+        <p class="text-muted">Manage your personal information and preferences.</p>
+      </div>
+
+      <div style="max-width:720px">
+        <!-- Personal info -->
+        <section class="profile-section">
+          <h2 class="profile-section__title">Personal Information</h2>
+          <div class="avatar-upload">
+            <img class="avatar-upload__img" src="https://picsum.photos/seed/profileavatar/160/160" alt="Your avatar" id="avatar-img">
+            <div>
+              <button class="btn btn--outline btn--sm" id="avatar-btn"><i class="fa-solid fa-camera" aria-hidden="true"></i> Change Photo</button>
+              <p class="text-sm text-faint" style="margin-top:var(--space-2)">JPG or PNG, max 5MB.</p>
+              <input type="file" id="avatar-input" accept="image/*" hidden>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+            <div class="field"><label class="field__label" for="pf-first">First Name</label><input type="text" id="pf-first" class="input" value="Jane"></div>
+            <div class="field"><label class="field__label" for="pf-last">Last Name</label><input type="text" id="pf-last" class="input" value="Doe"></div>
+            <div class="field"><label class="field__label" for="pf-email">Email</label><input type="email" id="pf-email" class="input" value="jane.doe@example.com"></div>
+            <div class="field"><label class="field__label" for="pf-phone">Phone</label><input type="tel" id="pf-phone" class="input" value="+1 555 014 2200"></div>
+          </div>
+          <div class="field"><label class="field__label" for="pf-type">Account Type</label>
+            <select id="pf-type" class="select"><option>Looking to rent/buy</option><option selected>Property Owner</option><option>Agent</option></select>
+          </div>
+          <div class="field" style="margin-bottom:0"><label class="field__label" for="pf-bio">Bio</label>
+            <textarea id="pf-bio" class="textarea" rows="3" placeholder="Tell others a little about yourself…">Property owner in Springfield with a few rentals. Happy to answer any questions!</textarea>
+          </div>
+          <div style="margin-top:var(--space-5)"><button class="btn btn--primary" data-save>Save Changes</button></div>
+        </section>
+
+        <!-- Password -->
+        <section class="profile-section">
+          <h2 class="profile-section__title">Change Password</h2>
+          <div class="field"><label class="field__label" for="pf-curr">Current Password</label><input type="password" id="pf-curr" class="input" placeholder="••••••••"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+            <div class="field"><label class="field__label" for="pf-new">New Password</label><input type="password" id="pf-new" class="input" placeholder="At least 8 characters"></div>
+            <div class="field"><label class="field__label" for="pf-conf">Confirm New</label><input type="password" id="pf-conf" class="input" placeholder="Re-enter password"></div>
+          </div>
+          <div style="margin-top:var(--space-2)"><button class="btn btn--primary" data-save>Update Password</button></div>
+        </section>
+
+        <!-- Notifications -->
+        <section class="profile-section">
+          <h2 class="profile-section__title">Notification Preferences</h2>
+          <div class="toggle-wrap" style="margin-bottom:var(--space-4)">
+            <div><div class="font-medium">New inquiries</div><div class="text-sm text-muted">Email me when someone messages about a listing.</div></div>
+            <label class="toggle"><input type="checkbox" checked><span class="toggle__track"></span></label>
+          </div>
+          <div class="toggle-wrap" style="margin-bottom:var(--space-4)">
+            <div><div class="font-medium">Saved search alerts</div><div class="text-sm text-muted">Notify me when new listings match my searches.</div></div>
+            <label class="toggle"><input type="checkbox" checked><span class="toggle__track"></span></label>
+          </div>
+          <div class="toggle-wrap" style="margin-bottom:var(--space-4)">
+            <div><div class="font-medium">Price drop alerts</div><div class="text-sm text-muted">Tell me when a favourite drops in price.</div></div>
+            <label class="toggle"><input type="checkbox"><span class="toggle__track"></span></label>
+          </div>
+          <div class="toggle-wrap">
+            <div><div class="font-medium">Marketing emails</div><div class="text-sm text-muted">Occasional tips, news, and product updates.</div></div>
+            <label class="toggle"><input type="checkbox"><span class="toggle__track"></span></label>
+          </div>
+        </section>
+
+        <!-- Danger zone -->
+        <section class="danger-zone">
+          <div class="danger-zone__title"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Danger Zone</div>
+          <p class="danger-zone__text">Deleting your account is permanent and will remove all your listings, messages, and saved searches. This cannot be undone.</p>
+          <button class="btn btn--outline" style="border-color:var(--color-danger);color:var(--color-danger)" data-modal-open="delete-account-modal">Delete Account</button>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Delete account modal -->
+  <div class="modal-backdrop" id="delete-account-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="del-title">
+      <div class="modal__header">
+        <h2 class="modal__title" id="del-title">Delete account?</h2>
+        <button class="modal__close" data-modal-close="delete-account-modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal__body">
+        <p>This will permanently delete your account and all associated data. Type <strong>DELETE</strong> to confirm.</p>
+        <div class="field" style="margin-top:var(--space-4);margin-bottom:0"><input type="text" id="del-confirm" class="input" placeholder="Type DELETE"></div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--ghost" data-modal-close="delete-account-modal">Cancel</button>
+        <button class="btn btn--primary" style="background:var(--color-danger)" id="del-go">Delete Account</button>
+      </div>
+    </div>
+  </div>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Rooms <span style="color:var(--color-primary)">OKC</span></span></a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home across the country.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Browse</p>
+        <nav class="footer__links" aria-label="Browse listings">
+          <a href="listings.html?type=sale">Homes for Sale</a>
+          <a href="listings.html?type=rent">Homes for Rent</a>
+          <a href="listings.html?type=shared">Shared / Rooms</a>
+          <a href="listings.html?type=short">Short-Term Stays</a>
+          <a href="calculator.html">Affordability Calculator</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">For Listers</p>
+        <nav class="footer__links" aria-label="Lister resources">
+          <a href="post-listing.html">Post a Listing</a>
+          <a href="dashboard.html">My Dashboard</a>
+          <a href="my-listings.html">Manage Listings</a>
+          <a href="messages.html">Inquiries</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:var(--color-accent)" aria-hidden="true"></i> for home seekers everywhere</p>
+    </div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+<script>
+document.getElementById('avatar-btn').addEventListener('click', function(){ document.getElementById('avatar-input').click(); });
+document.getElementById('avatar-input').addEventListener('change', function(e){
+  var f = e.target.files[0]; if(!f) return;
+  var r = new FileReader(); r.onload = function(ev){ document.getElementById('avatar-img').src = ev.target.result; showToast('Photo updated.','success'); }; r.readAsDataURL(f);
+});
+document.querySelectorAll('[data-save]').forEach(function(b){ b.addEventListener('click', function(){ showToast('Changes saved.','success'); }); });
+document.querySelectorAll('.toggle input').forEach(function(t){ t.addEventListener('change', function(){ showToast('Preference updated.','success'); }); });
+document.getElementById('del-go').addEventListener('click', function(){
+  if (document.getElementById('del-confirm').value.trim().toUpperCase()==='DELETE'){ closeModal('delete-account-modal'); showToast('Account deletion requested.','warning'); }
+  else { showToast('Please type DELETE to confirm.','error'); }
+});
+</script>
+</body></html>

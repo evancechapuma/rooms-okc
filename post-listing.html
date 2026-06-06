@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a Listing — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-top">
+
+<!-- NAVBAR -->
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
+      <a href="find-agent.html" class="navbar__link">Agents</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <div class="dropdown">
+        <button class="avatar-btn" data-dropdown-trigger aria-label="Account menu" aria-haspopup="true" aria-expanded="false">JD</button>
+        <div class="dropdown__menu" role="menu">
+          <a href="dashboard.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Dashboard</a>
+          <a href="my-listings.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+          <a href="favourites.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+          <a href="messages.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+          <div class="dropdown__divider"></div>
+          <a href="profile.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+          <button class="dropdown__item is-danger" role="menuitem"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</button>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
+    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
+    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
+    <a href="messages.html" class="btn btn--ghost" style="width:100%">Messages</a>
+    <hr class="divider">
+    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="post-layout">
+  <div id="post-form">
+    <header style="text-align:center;margin-bottom:var(--space-6)">
+      <h1 style="font-size:var(--text-3xl)">Post a New Listing</h1>
+      <p class="text-muted">List your property for free and reach thousands of home seekers.</p>
+    </header>
+
+    <!-- Stepper -->
+    <div class="stepper" role="list" aria-label="Listing progress">
+      <div class="step-item is-active" role="listitem">
+        <div class="step-item__inner">
+          <div class="step-item__circle">1</div>
+          <span class="step-item__label">Basics</span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" role="listitem">
+        <div class="step-item__inner">
+          <div class="step-item__circle">2</div>
+          <span class="step-item__label">Details</span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" role="listitem">
+        <div class="step-item__inner">
+          <div class="step-item__circle">3</div>
+          <span class="step-item__label">Photos</span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" role="listitem">
+        <div class="step-item__inner">
+          <div class="step-item__circle">4</div>
+          <span class="step-item__label">Review</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:var(--space-6)">
+      <!-- STEP 1 -->
+      <section class="post-step is-active" aria-label="Step 1: Category and basics">
+        <h2 style="font-size:var(--text-xl);margin-bottom:var(--space-5)">Category &amp; Basics</h2>
+        <div class="field">
+          <label class="field__label field__label--required" for="s1-category">Listing Category</label>
+          <select id="s1-category" class="select">
+            <option value="">Select a category…</option>
+            <option value="sale">For Sale</option>
+            <option value="rent">For Rent</option>
+            <option value="shared">Shared / Room</option>
+            <option value="short">Short-Term Stay</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field__label field__label--required" for="s1-title">Listing Title</label>
+          <input type="text" id="s1-title" class="input" placeholder="e.g. Modern 2-Bed Apartment with City Views">
+        </div>
+        <div class="field">
+          <label class="field__label" for="s1-type">Property Type</label>
+          <select id="s1-type" class="select">
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="condo">Condo</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="studio">Studio</option>
+            <option value="land">Land</option>
+          </select>
+        </div>
+        <div class="field" style="margin-bottom:0">
+          <label class="field__label field__label--required" for="s1-address">Property Address</label>
+          <input type="text" id="s1-address" class="input" placeholder="123 Main St, Springfield, IL" autocomplete="street-address">
+        </div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="post-step" aria-label="Step 2: Details" aria-hidden="true">
+        <h2 style="font-size:var(--text-xl);margin-bottom:var(--space-5)">Property Details</h2>
+        <div class="field">
+          <label class="field__label field__label--required" for="s2-price">Price (USD)</label>
+          <input type="number" id="s2-price" class="input" placeholder="350000" min="0">
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)">
+          <div class="field">
+            <label class="field__label" for="s2-beds">Bedrooms</label>
+            <input type="number" id="s2-beds" class="input" placeholder="3" min="0">
+          </div>
+          <div class="field">
+            <label class="field__label" for="s2-baths">Bathrooms</label>
+            <input type="number" id="s2-baths" class="input" placeholder="2" min="0">
+          </div>
+          <div class="field">
+            <label class="field__label" for="s2-area">Area (sq ft)</label>
+            <input type="number" id="s2-area" class="input" placeholder="1200" min="0">
+          </div>
+        </div>
+        <div class="field" style="margin-bottom:0">
+          <label class="field__label" for="s2-desc">Description</label>
+          <textarea id="s2-desc" class="textarea" rows="5" placeholder="Describe the property, its features, and the neighbourhood…"></textarea>
+        </div>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="post-step" aria-label="Step 3: Photos" aria-hidden="true">
+        <h2 style="font-size:var(--text-xl);margin-bottom:var(--space-5)">Photos</h2>
+        <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload photos">
+          <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+          <p><strong>Click to upload</strong> or drag and drop</p>
+          <p style="margin-top:var(--space-2)">JPG, PNG up to 10MB each</p>
+        </div>
+        <input type="file" id="photo-input" accept="image/*" multiple hidden>
+        <div class="photo-previews" id="photo-previews"></div>
+      </section>
+
+      <!-- STEP 4 -->
+      <section class="post-step" aria-label="Step 4: Contact and review" aria-hidden="true">
+        <h2 style="font-size:var(--text-xl);margin-bottom:var(--space-5)">Contact &amp; Review</h2>
+        <div class="field">
+          <label class="field__label field__label--required" for="s4-contact">Contact Email or Phone</label>
+          <input type="text" id="s4-contact" class="input" placeholder="you@example.com or +1 555 000 0000">
+        </div>
+        <div class="field">
+          <label class="field__label" for="s4-listertype">You are listing as</label>
+          <select id="s4-listertype" class="select">
+            <option value="owner">Owner</option>
+            <option value="agent">Agent</option>
+          </select>
+        </div>
+        <div style="background:var(--color-surface-alt);border-radius:var(--radius-lg);padding:var(--space-5);margin-top:var(--space-4)">
+          <h3 style="font-size:var(--text-base);margin-bottom:var(--space-4)">Review your listing</h3>
+          <div id="review-content"></div>
+        </div>
+      </section>
+
+      <!-- Nav buttons -->
+      <div style="display:flex;justify-content:space-between;margin-top:var(--space-6);gap:var(--space-3)">
+        <button id="btn-back" class="btn btn--ghost" style="visibility:hidden"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back</button>
+        <button id="btn-next" class="btn btn--primary">Next <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS STATE -->
+  <div id="success-state" style="display:none;text-align:center;padding:var(--space-8) var(--space-5)">
+    <div style="width:88px;height:88px;border-radius:var(--radius-full);background:var(--color-primary-soft);color:var(--color-primary);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto var(--space-5)">
+      <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+    </div>
+    <h1 style="font-size:var(--text-3xl);margin-bottom:var(--space-2)">Listing Published!</h1>
+    <p class="text-muted" style="margin-bottom:var(--space-6);max-width:440px;margin-inline:auto">Your property is now live and visible to home seekers. You can manage it anytime from your dashboard.</p>
+    <div style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap">
+      <a href="my-listings.html" class="btn btn--primary"><i class="fa-solid fa-list" aria-hidden="true"></i> View My Listings</a>
+      <a href="post-listing.html" class="btn btn--outline">Post Another</a>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Rooms <span style="color:var(--color-primary)">OKC</span></span></a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home across the country.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Browse</p>
+        <nav class="footer__links" aria-label="Browse listings">
+          <a href="listings.html?type=sale">Homes for Sale</a>
+          <a href="listings.html?type=rent">Homes for Rent</a>
+          <a href="listings.html?type=shared">Shared / Rooms</a>
+          <a href="listings.html?type=short">Short-Term Stays</a>
+          <a href="calculator.html">Affordability Calculator</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">For Listers</p>
+        <nav class="footer__links" aria-label="Lister resources">
+          <a href="post-listing.html">Post a Listing</a>
+          <a href="dashboard.html">My Dashboard</a>
+          <a href="my-listings.html">Manage Listings</a>
+          <a href="messages.html">Inquiries</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:var(--color-accent)" aria-hidden="true"></i> for home seekers everywhere</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/post-listing.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachel Torres — Agent Profile — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-top">
+
+<!-- NAVBAR -->
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale" class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent" class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short" class="navbar__link">Short-Term</a>
+      <a href="find-agent.html" class="navbar__link is-active">Agents</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <a href="post-listing.html" class="btn btn--accent btn--sm"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+      <div class="flex gap-2">
+        <a href="login.html" class="btn btn--ghost btn--sm">Log in</a>
+        <a href="signup.html" class="btn btn--primary btn--sm">Sign up</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <a href="listings.html?type=sale" class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent" class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="find-agent.html" class="nav-drawer__link"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> Find an Agent</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
+    <hr class="divider">
+    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+  </div>
+</div>
+
+<main class="container section" style="padding-top:var(--space-5)">
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a><span aria-hidden="true">›</span>
+    <a href="find-agent.html">Agents</a><span aria-hidden="true">›</span>
+    <strong>Rachel Torres</strong>
+  </nav>
+
+  <div class="detail-layout" style="margin-top:var(--space-5)">
+    <!-- LEFT COLUMN -->
+    <div>
+      <!-- Agent header -->
+      <div class="ap-header">
+        <img class="ap-header__photo" src="https://picsum.photos/seed/ag1/400/400" alt="Rachel Torres">
+        <div class="ap-header__info">
+          <div class="flex items-center gap-2" style="flex-wrap:wrap">
+            <h1 class="ap-header__name">Rachel Torres</h1>
+            <span class="ap-verified" title="Verified Agent"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Verified</span>
+          </div>
+          <p class="ap-header__company"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Pinnacle Realty Group</p>
+          <div class="ap-header__rating">
+            <span class="agent-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+            <strong>5.0</strong>
+            <span class="text-muted">(128 reviews)</span>
+          </div>
+          <div class="ap-header__tags">
+            <span class="agent-tag">Buyer's Agent</span>
+            <span class="agent-tag">Seller's Agent</span>
+            <span class="agent-tag">Residential</span>
+          </div>
+          <p class="ap-header__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Oklahoma City, OK · Serving OKC metro area</p>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="ap-stats">
+        <div class="ap-stat">
+          <span class="ap-stat__val">47</span>
+          <span class="ap-stat__label">Active Listings</span>
+        </div>
+        <div class="ap-stat">
+          <span class="ap-stat__val">92</span>
+          <span class="ap-stat__label">Homes Sold</span>
+        </div>
+        <div class="ap-stat">
+          <span class="ap-stat__val">$24M</span>
+          <span class="ap-stat__label">Total Volume</span>
+        </div>
+        <div class="ap-stat">
+          <span class="ap-stat__val">8 yr</span>
+          <span class="ap-stat__label">Experience</span>
+        </div>
+        <div class="ap-stat">
+          <span class="ap-stat__val">&lt; 1hr</span>
+          <span class="ap-stat__label">Avg. Response</span>
+        </div>
+      </div>
+
+      <!-- About -->
+      <section class="ap-section">
+        <h2 class="ap-section__title">About Rachel</h2>
+        <p>Rachel Torres is a top-performing agent in the Oklahoma City metro area with over eight years of experience helping families find their perfect home. She specialises in residential sales and first-time buyer guidance, combining deep neighbourhood knowledge with a client-first approach that has earned her a perfect five-star rating across 128 verified reviews.</p>
+        <p style="margin-top:var(--space-3)">Before entering real estate, Rachel worked in community development, which gives her a unique perspective on what makes a neighbourhood thrive. Whether you're buying your first home or selling a long-held property, she'll guide you through every step with transparent communication and expert negotiation.</p>
+      </section>
+
+      <!-- Credentials -->
+      <section class="ap-section">
+        <h2 class="ap-section__title">Credentials & Specialties</h2>
+        <div class="ap-credentials">
+          <div class="ap-credential"><i class="fa-solid fa-award" aria-hidden="true"></i><div><strong>Licensed Realtor</strong><span>Oklahoma Real Estate Commission · #OK-28491</span></div></div>
+          <div class="ap-credential"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><div><strong>Certified Buyer Representative (CBR)</strong><span>National Association of Realtors</span></div></div>
+          <div class="ap-credential"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><div><strong>Accredited Staging Professional</strong><span>Real Estate Staging Association</span></div></div>
+          <div class="ap-credential"><i class="fa-solid fa-handshake" aria-hidden="true"></i><div><strong>Short Sale & Foreclosure Certified</strong><span>NAR SFR Designation</span></div></div>
+        </div>
+      </section>
+
+      <!-- Service areas -->
+      <section class="ap-section">
+        <h2 class="ap-section__title">Service Areas</h2>
+        <div class="ap-areas">
+          <span class="ap-area-chip">Oklahoma City</span>
+          <span class="ap-area-chip">Edmond</span>
+          <span class="ap-area-chip">Norman</span>
+          <span class="ap-area-chip">Moore</span>
+          <span class="ap-area-chip">Midwest City</span>
+          <span class="ap-area-chip">Yukon</span>
+          <span class="ap-area-chip">Nichols Hills</span>
+          <span class="ap-area-chip">Del City</span>
+        </div>
+      </section>
+
+      <!-- Active listings -->
+      <section class="ap-section">
+        <div class="flex items-center justify-between" style="margin-bottom:var(--space-4)">
+          <h2 class="ap-section__title" style="margin-bottom:0">Rachel's Active Listings</h2>
+          <a href="listings.html" class="text-sm" style="font-weight:600">View all 47 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="listing-grid">
+          <article class="card-listing">
+            <div class="card-listing__img-wrap">
+              <img src="https://picsum.photos/seed/rla1/800/600" alt="" class="card-listing__img" loading="lazy" width="800" height="600">
+              <div class="card-listing__badges"><span class="badge badge--sale">For Sale</span></div>
+              <button class="card-listing__fav" aria-label="Save"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+            </div>
+            <div class="card-listing__body">
+              <div class="card-listing__price">$325,000</div>
+              <h3 class="card-listing__title">Updated Ranch in Nichols Hills</h3>
+              <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Nichols Hills, OK</p>
+              <div class="card-listing__meta">
+                <span class="card-listing__meta-item"><i class="fa-solid fa-bed" aria-hidden="true"></i> <strong>3</strong> beds</span>
+                <span class="card-listing__meta-item"><i class="fa-solid fa-bath" aria-hidden="true"></i> <strong>2</strong> bath</span>
+                <span class="card-listing__meta-item"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> <strong>1,680</strong> sq ft</span>
+              </div>
+            </div>
+          </article>
+          <article class="card-listing">
+            <div class="card-listing__img-wrap">
+              <img src="https://picsum.photos/seed/rla2/800/600" alt="" class="card-listing__img" loading="lazy" width="800" height="600">
+              <div class="card-listing__badges"><span class="badge badge--sale">For Sale</span></div>
+              <button class="card-listing__fav" aria-label="Save"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+            </div>
+            <div class="card-listing__body">
+              <div class="card-listing__price">$489,000</div>
+              <h3 class="card-listing__title">Modern Farmhouse with Pool</h3>
+              <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Edmond, OK</p>
+              <div class="card-listing__meta">
+                <span class="card-listing__meta-item"><i class="fa-solid fa-bed" aria-hidden="true"></i> <strong>4</strong> beds</span>
+                <span class="card-listing__meta-item"><i class="fa-solid fa-bath" aria-hidden="true"></i> <strong>3</strong> bath</span>
+                <span class="card-listing__meta-item"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> <strong>2,450</strong> sq ft</span>
+              </div>
+            </div>
+          </article>
+          <article class="card-listing">
+            <div class="card-listing__img-wrap">
+              <img src="https://picsum.photos/seed/rla3/800/600" alt="" class="card-listing__img" loading="lazy" width="800" height="600">
+              <div class="card-listing__badges"><span class="badge badge--rent">For Rent</span></div>
+              <button class="card-listing__fav" aria-label="Save"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+            </div>
+            <div class="card-listing__body">
+              <div class="card-listing__price">$1,350<span>/mo</span></div>
+              <h3 class="card-listing__title">Downtown Loft Near Bricktown</h3>
+              <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Oklahoma City, OK</p>
+              <div class="card-listing__meta">
+                <span class="card-listing__meta-item"><i class="fa-solid fa-bed" aria-hidden="true"></i> <strong>1</strong> bed</span>
+                <span class="card-listing__meta-item"><i class="fa-solid fa-bath" aria-hidden="true"></i> <strong>1</strong> bath</span>
+                <span class="card-listing__meta-item"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> <strong>780</strong> sq ft</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section class="ap-section">
+        <div class="flex items-center justify-between" style="margin-bottom:var(--space-4)">
+          <h2 class="ap-section__title" style="margin-bottom:0">Client Reviews</h2>
+          <span class="text-muted text-sm">128 total</span>
+        </div>
+
+        <div class="ap-reviews">
+          <div class="ap-review">
+            <div class="ap-review__header">
+              <img class="ap-review__avatar" src="https://picsum.photos/seed/rev1/80/80" alt="">
+              <div>
+                <div class="ap-review__name">Michael & Sarah R.</div>
+                <div class="ap-review__meta"><span class="agent-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span> · Bought a home · 3 months ago</div>
+              </div>
+            </div>
+            <p class="ap-review__text">Rachel was incredible from start to finish. She found us a home in our budget that we didn't even know existed, negotiated $15K off the asking price, and made the entire closing process feel seamless. She responded to every text and email within minutes. Could not recommend more highly.</p>
+          </div>
+
+          <div class="ap-review">
+            <div class="ap-review__header">
+              <img class="ap-review__avatar" src="https://picsum.photos/seed/rev2/80/80" alt="">
+              <div>
+                <div class="ap-review__name">David K.</div>
+                <div class="ap-review__meta"><span class="agent-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span> · Sold a home · 6 months ago</div>
+              </div>
+            </div>
+            <p class="ap-review__text">We listed with Rachel after two other agents couldn't get our house sold. She staged it beautifully, priced it right, and had three offers within the first weekend. Sold above asking. She genuinely cares about her clients and it shows.</p>
+          </div>
+
+          <div class="ap-review">
+            <div class="ap-review__header">
+              <img class="ap-review__avatar" src="https://picsum.photos/seed/rev3/80/80" alt="">
+              <div>
+                <div class="ap-review__name">Amara O.</div>
+                <div class="ap-review__meta"><span class="agent-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span> · Bought a home · 1 year ago</div>
+              </div>
+            </div>
+            <p class="ap-review__text">Rachel helped me buy my first home as a single buyer and made what could have been an overwhelming process feel totally manageable. Her knowledge of the Edmond area is outstanding. The only reason for 4.5 instead of 5 is that scheduling viewings sometimes took a couple of days, but that's a minor thing given how excellent everything else was.</p>
+          </div>
+        </div>
+        <button class="btn btn--outline" style="width:100%;margin-top:var(--space-4)">Load more reviews</button>
+      </section>
+    </div>
+
+    <!-- RIGHT COLUMN — Contact sidebar -->
+    <aside>
+      <div class="ap-contact-card">
+        <p class="ap-contact-card__label">Contact Rachel</p>
+        <form id="agent-contact-form" novalidate>
+          <div class="field">
+            <input type="text" class="input" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <input type="email" class="input" placeholder="Email address" required>
+          </div>
+          <div class="field">
+            <input type="tel" class="input" placeholder="Phone (optional)">
+          </div>
+          <div class="field">
+            <textarea class="textarea" rows="4" placeholder="Hi Rachel, I'm interested in learning more about homes in the OKC area…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message</button>
+        </form>
+        <div class="ap-contact-card__alt">
+          <a href="tel:+14055550147" class="btn btn--outline btn--sm" style="flex:1"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+          <button class="btn btn--outline btn--sm" style="flex:1" onclick="showToast('Profile link copied!','info')"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Share</button>
+        </div>
+      </div>
+
+      <!-- Quick facts -->
+      <div class="ap-sidebar-card">
+        <p class="ap-sidebar-card__title">Quick Facts</p>
+        <div class="ap-facts">
+          <div class="ap-fact"><span class="ap-fact__label">License</span><span class="ap-fact__val">#OK-28491</span></div>
+          <div class="ap-fact"><span class="ap-fact__label">Member since</span><span class="ap-fact__val">2018</span></div>
+          <div class="ap-fact"><span class="ap-fact__label">Languages</span><span class="ap-fact__val">English, Spanish</span></div>
+          <div class="ap-fact"><span class="ap-fact__label">Avg. sale price</span><span class="ap-fact__val">$260K</span></div>
+          <div class="ap-fact"><span class="ap-fact__label">Price range</span><span class="ap-fact__val">$120K – $550K</span></div>
+          <div class="ap-fact"><span class="ap-fact__label">Response rate</span><span class="ap-fact__val">99%</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Rooms <span style="color:var(--color-primary)">OKC</span></span></a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div><p class="footer__col-title">Browse</p><nav class="footer__links"><a href="listings.html?type=sale">For Sale</a><a href="listings.html?type=rent">For Rent</a><a href="find-agent.html">Find an Agent</a></nav></div>
+      <div><p class="footer__col-title">Account</p><nav class="footer__links"><a href="login.html">Log In</a><a href="signup.html">Sign Up</a><a href="dashboard.html">Dashboard</a></nav></div>
+      <div><p class="footer__col-title">Company</p><nav class="footer__links"><a href="#">About</a><a href="#">Privacy</a><a href="#">Terms</a></nav></div>
+    </div>
+    <div class="footer__bottom"><p>&copy; 2026 Rooms OKC. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+document.getElementById('agent-contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  showToast('Message sent to Rachel! She typically responds within an hour.','success');
+  this.reset();
+});
+</script>
+</body>
+</html>

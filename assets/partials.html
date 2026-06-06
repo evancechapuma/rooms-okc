@@ -1,0 +1,129 @@
+<!--
+  SHARED PARTIALS REFERENCE
+  Copy-paste navbar and footer into each page.
+  Replace with Django {% include %} tags later.
+-->
+
+<!-- ==================== NAVBAR ==================== -->
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="Rooms OKC Home">
+      <i class="fa-solid fa-house" aria-hidden="true"></i>
+      <span class="navbar__logo-word">Rooms<span>OKC</span></span>
+    </a>
+
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale" class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent" class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short" class="navbar__link">Short-Term</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+      <a href="post-listing.html" class="btn btn--accent btn--sm" style="display:none" data-auth-only>
+        <i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing
+      </a>
+      <!-- Logged out -->
+      <div class="flex gap-2" data-guest-only>
+        <a href="login.html" class="btn btn--ghost btn--sm">Log in</a>
+        <a href="signup.html" class="btn btn--primary btn--sm">Sign up</a>
+      </div>
+      <!-- Logged in -->
+      <div class="dropdown" data-auth-only style="display:none">
+        <button class="avatar-btn" data-dropdown-trigger aria-label="Account menu" aria-haspopup="true" aria-expanded="false">JD</button>
+        <div class="dropdown__menu" role="menu">
+          <a href="dashboard.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Dashboard</a>
+          <a href="my-listings.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+          <a href="favourites.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+          <a href="messages.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+          <div class="dropdown__divider"></div>
+          <a href="profile.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+          <button class="dropdown__item is-danger" role="menuitem"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</button>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav Drawer -->
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close navigation">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
+    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="login.html"  class="btn btn--outline" style="width:100%">Log in</a>
+    <a href="signup.html" class="btn btn--ghost"   style="width:100%">Sign up</a>
+  </div>
+</div>
+
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Rooms <span style="color:var(--color-primary)">OKC</span></span>
+        </a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home across the country.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Browse</p>
+        <nav class="footer__links" aria-label="Browse listings">
+          <a href="listings.html?type=sale">Homes for Sale</a>
+          <a href="listings.html?type=rent">Homes for Rent</a>
+          <a href="listings.html?type=shared">Shared / Rooms</a>
+          <a href="listings.html?type=short">Short-Term Stays</a>
+          <a href="calculator.html">Affordability Calculator</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footer__col-title">For Listers</p>
+        <nav class="footer__links" aria-label="Lister resources">
+          <a href="post-listing.html">Post a Listing</a>
+          <a href="dashboard.html">My Dashboard</a>
+          <a href="my-listings.html">Manage Listings</a>
+          <a href="messages.html">Inquiries</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:var(--color-accent)" aria-hidden="true"></i> for home seekers everywhere</p>
+    </div>
+  </div>
+</footer>

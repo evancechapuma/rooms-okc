@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Properties — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-top">
+
+<!-- NAVBAR -->
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
+      <a href="find-agent.html" class="navbar__link">Agents</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <a href="post-listing.html" class="btn btn--accent btn--sm"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+      <div class="flex gap-2">
+        <a href="login.html" class="btn btn--ghost btn--sm">Log in</a>
+        <a href="signup.html" class="btn btn--primary btn--sm">Sign up</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
+    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
+    <a href="messages.html" class="btn btn--ghost" style="width:100%">Messages</a>
+    <hr class="divider">
+    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+  </div>
+</div>
+
+<main>
+  <!-- Search Bar -->
+  <div style="background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:var(--space-4) 0;">
+    <div class="container flex gap-3" style="flex-wrap:wrap">
+      <div style="flex:1;min-width:200px;position:relative">
+        <i class="fa-solid fa-magnifying-glass" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--color-text-faint)" aria-hidden="true"></i>
+        <input type="search" id="search-q" class="input" style="padding-left:2.5rem" placeholder="Search by location or title…" aria-label="Search">
+      </div>
+      <button class="btn btn--ghost filter-toggle-btn" id="open-filters">
+        <i class="fa-solid fa-sliders" aria-hidden="true"></i> Filters
+      </button>
+      <button id="save-search-btn" class="btn btn--outline btn--sm">
+        <i class="fa-solid fa-bell" aria-hidden="true"></i> Save Search
+      </button>
+    </div>
+  </div>
+
+  <div class="container section" style="padding-top:var(--space-6)">
+    <div class="listings-layout">
+
+      <!-- FILTER SIDEBAR -->
+      <aside class="filter-sidebar" aria-label="Filters" id="filter-panel" style="display:none">
+        <div class="filter-sidebar__title">
+          <span><i class="fa-solid fa-sliders" aria-hidden="true"></i> Filters</span>
+          <button class="btn btn--ghost btn--sm" onclick="clearAllFilters()">Clear all</button>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-group__label" for="f-type">Category</label>
+          <select id="f-type" class="select" aria-label="Filter by category">
+            <option value="">All Categories</option>
+            <option value="sale">For Sale</option>
+            <option value="rent">For Rent</option>
+            <option value="shared">Shared / Room</option>
+            <option value="short">Short-Term</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-group__label">Price Range</label>
+          <div class="flex gap-3" style="margin-bottom:var(--space-3)">
+            <input type="number" id="f-min-price" class="input" placeholder="Min" aria-label="Minimum price">
+            <input type="number" id="f-max-price" class="input" placeholder="Max" aria-label="Maximum price">
+          </div>
+          <input type="range" id="slider-min" class="range-slider" min="0" max="1000000" step="5000" value="0" aria-label="Minimum price slider">
+          <input type="range" id="slider-max" class="range-slider" min="0" max="1000000" step="5000" value="1000000" aria-label="Maximum price slider" style="margin-top:var(--space-2)">
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-group__label" for="f-beds">Bedrooms</label>
+          <select id="f-beds" class="select" aria-label="Minimum bedrooms">
+            <option value="0">Any</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-group__label" for="f-baths">Bathrooms</label>
+          <select id="f-baths" class="select" aria-label="Minimum bathrooms">
+            <option value="0">Any</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-group__label" for="f-sort">Sort By</label>
+          <select id="f-sort" class="select" aria-label="Sort results">
+            <option value="newest">Newest first</option>
+            <option value="price-asc">Lowest price</option>
+            <option value="price-desc">Highest price</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- RESULTS -->
+      <div>
+        <div class="results-header">
+          <p class="results-count" id="results-count" aria-live="polite"><strong>—</strong> properties found</p>
+          <div class="flex gap-3 items-center">
+            <div class="view-toggle" role="group" aria-label="View layout">
+              <button class="view-toggle__btn is-active" aria-label="Grid view"><i class="fa-solid fa-th-large" aria-hidden="true"></i></button>
+              <button class="view-toggle__btn" aria-label="List view"><i class="fa-solid fa-list" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="active-chips" id="active-chips" aria-label="Active filters"></div>
+
+        <div class="listing-grid" id="results-grid" aria-live="polite" aria-label="Property listings">
+          <!-- Skeleton placeholders -->
+          <div class="card" style="aspect-ratio:1.2"><div class="skeleton" style="height:100%"></div></div>
+          <div class="card" style="aspect-ratio:1.2"><div class="skeleton" style="height:100%"></div></div>
+          <div class="card" style="aspect-ratio:1.2"><div class="skeleton" style="height:100%"></div></div>
+        </div>
+
+        <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Filter Drawer -->
+  <div class="filter-mobile-drawer" id="filter-drawer" role="dialog" aria-modal="true" aria-label="Filters">
+    <div class="filter-mobile-drawer__panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-5)">
+        <h2 style="font-size:var(--text-lg)"><i class="fa-solid fa-sliders" aria-hidden="true"></i> Filters</h2>
+        <button id="close-filters" class="btn btn--ghost btn--sm" aria-label="Close filters"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p class="text-muted text-sm">Use the filter panel on the left to refine results.</p>
+      <button class="btn btn--primary" style="width:100%;margin-top:var(--space-5)" onclick="document.getElementById('filter-drawer').classList.remove('is-open');applyFilters()">
+        Apply Filters
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Rooms <span style="color:var(--color-primary)">OKC</span></span>
+        </a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div><p class="footer__col-title">Browse</p><nav class="footer__links"><a href="listings.html?type=sale">For Sale</a><a href="listings.html?type=rent">For Rent</a><a href="listings.html?type=shared">Shared</a><a href="listings.html?type=short">Short-Term</a></nav></div>
+      <div><p class="footer__col-title">Account</p><nav class="footer__links"><a href="login.html">Log In</a><a href="signup.html">Sign Up</a><a href="dashboard.html">Dashboard</a><a href="calculator.html">Calculator</a></nav></div>
+      <div><p class="footer__col-title">Company</p><nav class="footer__links"><a href="#">About</a><a href="#">Privacy</a><a href="#">Terms</a></nav></div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/listings.js"></script>
+<script>
+  // Show desktop sidebar
+  if (window.innerWidth >= 900) {
+    document.getElementById('filter-panel').style.display = 'block';
+  }
+  window.addEventListener('resize', () => {
+    document.getElementById('filter-panel').style.display = window.innerWidth >= 900 ? 'block' : 'none';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-top">
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
+      <a href="find-agent.html" class="navbar__link">Agents</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <a href="post-listing.html" class="btn btn--accent btn--sm"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+      <div class="dropdown">
+        <button class="avatar-btn" data-dropdown-trigger aria-label="Account menu" aria-haspopup="true" aria-expanded="false">JD</button>
+        <div class="dropdown__menu" role="menu">
+          <a href="dashboard.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Dashboard</a>
+          <a href="my-listings.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+          <a href="favourites.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+          <a href="messages.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+          <div class="dropdown__divider"></div>
+          <a href="profile.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+          <button class="dropdown__item is-danger" role="menuitem"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</button>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
+    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
+    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
+    <a href="messages.html" class="btn btn--ghost" style="width:100%">Messages</a>
+    <hr class="divider">
+    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+  </div>
+</div>
+<div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="Admin navigation">
+      <p class="text-xs text-faint" style="text-transform:uppercase;letter-spacing:.06em;padding:0 var(--space-4);margin-bottom:var(--space-2)">Admin</p>
+      <a href="admin.html" class="dash-nav-item is-active"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Overview</a>
+      <a href="#pending" class="dash-nav-item"><i class="fa-solid fa-clock" aria-hidden="true"></i> Pending Listings</a>
+      <a href="#flagged" class="dash-nav-item"><i class="fa-solid fa-flag" aria-hidden="true"></i> Flagged Content</a>
+      <a href="#users" class="dash-nav-item"><i class="fa-solid fa-users" aria-hidden="true"></i> User Management</a>
+      <hr class="divider">
+      <a href="dashboard.html" class="dash-nav-item"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Exit Admin</a>
+    </aside>
+  <main class="dashboard-main">
+      <div class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <p class="text-muted">Platform overview and moderation tools.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card__icon stat-card__icon--primary"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+          <span class="stat-card__value">24,318</span><span class="stat-card__label">Total Listings</span>
+          <span class="stat-card__meta"><i class="fa-solid fa-arrow-up text-success" aria-hidden="true"></i> 248 this week</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon stat-card__icon--info"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+          <span class="stat-card__value">98,042</span><span class="stat-card__label">Registered Users</span>
+          <span class="stat-card__meta"><i class="fa-solid fa-arrow-up text-success" aria-hidden="true"></i> 1.2K this week</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon stat-card__icon--accent"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+          <span class="stat-card__value">17</span><span class="stat-card__label">Pending Approvals</span>
+          <span class="stat-card__meta">Awaiting review</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon" style="background:#fef2f2;color:var(--color-danger)"><i class="fa-solid fa-flag" aria-hidden="true"></i></div>
+          <span class="stat-card__value">5</span><span class="stat-card__label">Open Reports</span>
+          <span class="stat-card__meta">Needs attention</span>
+        </div>
+      </div>
+
+      <!-- Pending listings -->
+      <section class="card" id="pending" style="overflow-x:auto;margin-bottom:var(--space-6)">
+        <div style="padding:var(--space-4) var(--space-4) 0"><h2 style="font-size:var(--text-xl)">Pending Listings</h2></div>
+        <table class="admin-table">
+          <thead><tr><th>Listing</th><th>Lister</th><th>Type</th><th>Submitted</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ap1/120/90" alt=""><span class="font-semibold">Riverside Loft, Unit 4B</span></div></td>
+              <td>m.reyes@example.com</td><td><span class="badge badge--rent">Rent</span></td><td>2h ago</td>
+              <td><div class="listing-table__actions"><button class="btn btn--primary btn--sm" data-mod="approve">Approve</button><button class="btn btn--outline btn--sm" data-mod="reject">Reject</button></div></td>
+            </tr>
+            <tr>
+              <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ap2/120/90" alt=""><span class="font-semibold">Suburban 4-Bed Home</span></div></td>
+              <td>agent.lin@realty.com</td><td><span class="badge badge--sale">Sale</span></td><td>4h ago</td>
+              <td><div class="listing-table__actions"><button class="btn btn--primary btn--sm" data-mod="approve">Approve</button><button class="btn btn--outline btn--sm" data-mod="reject">Reject</button></div></td>
+            </tr>
+            <tr>
+              <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ap3/120/90" alt=""><span class="font-semibold">Beach House Weekly Rental</span></div></td>
+              <td>d.okoro@example.com</td><td><span class="badge badge--short">Short-Term</span></td><td>1d ago</td>
+              <td><div class="listing-table__actions"><button class="btn btn--primary btn--sm" data-mod="approve">Approve</button><button class="btn btn--outline btn--sm" data-mod="reject">Reject</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Flagged content -->
+      <section class="card" id="flagged" style="overflow-x:auto;margin-bottom:var(--space-6)">
+        <div style="padding:var(--space-4) var(--space-4) 0"><h2 style="font-size:var(--text-xl)">Flagged Content</h2></div>
+        <table class="admin-table">
+          <thead><tr><th>Listing</th><th>Reason</th><th>Reported by</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">Too-Good Studio $99/mo</td><td><span class="badge badge--expired">Possible scam</span></td><td>3 users</td>
+              <td><div class="listing-table__actions"><button class="btn btn--ghost btn--sm" data-mod="review">Review</button><button class="btn btn--ghost btn--sm" data-mod="dismiss">Dismiss</button><button class="btn btn--outline btn--sm" data-mod="remove" style="border-color:var(--color-danger);color:var(--color-danger)">Remove</button></div></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Duplicate Penthouse Post</td><td><span class="badge badge--expired">Duplicate</span></td><td>1 user</td>
+              <td><div class="listing-table__actions"><button class="btn btn--ghost btn--sm" data-mod="review">Review</button><button class="btn btn--ghost btn--sm" data-mod="dismiss">Dismiss</button><button class="btn btn--outline btn--sm" data-mod="remove" style="border-color:var(--color-danger);color:var(--color-danger)">Remove</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- User management -->
+      <section class="card" id="users" style="overflow-x:auto">
+        <div style="padding:var(--space-4)">
+          <div class="flex items-center justify-between" style="flex-wrap:wrap;gap:var(--space-3)">
+            <h2 style="font-size:var(--text-xl)">User Management</h2>
+            <div class="input-wrap" style="max-width:260px"><span class="input-affix"><i class="fa-solid fa-magnifying-glass"></i></span><input type="search" class="input" placeholder="Search users…" style="padding-left:36px"></div>
+          </div>
+        </div>
+        <table class="admin-table">
+          <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">Jane Doe</td><td>jane.doe@example.com</td><td><span class="badge badge--owner">Owner</span></td><td><span class="badge badge--active">Active</span></td>
+              <td><div class="listing-table__actions"><button class="btn btn--ghost btn--sm" data-mod="role">Change role</button><button class="btn btn--outline btn--sm" data-mod="suspend">Suspend</button></div></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Sarah Lin</td><td>agent.lin@realty.com</td><td><span class="badge badge--agent">Agent</span></td><td><span class="badge badge--active">Active</span></td>
+              <td><div class="listing-table__actions"><button class="btn btn--ghost btn--sm" data-mod="role">Change role</button><button class="btn btn--outline btn--sm" data-mod="suspend">Suspend</button></div></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Spam Account</td><td>noreply@spam.test</td><td><span class="badge badge--owner">Owner</span></td><td><span class="badge badge--paused">Suspended</span></td>
+              <td><div class="listing-table__actions"><button class="btn btn--ghost btn--sm" data-mod="role">Change role</button><button class="btn btn--primary btn--sm" data-mod="reinstate">Reinstate</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Rooms <span style="color:var(--color-primary)">OKC</span></span></a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home across the country.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Browse</p>
+        <nav class="footer__links" aria-label="Browse listings">
+          <a href="listings.html?type=sale">Homes for Sale</a>
+          <a href="listings.html?type=rent">Homes for Rent</a>
+          <a href="listings.html?type=shared">Shared / Rooms</a>
+          <a href="listings.html?type=short">Short-Term Stays</a>
+          <a href="calculator.html">Affordability Calculator</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">For Listers</p>
+        <nav class="footer__links" aria-label="Lister resources">
+          <a href="post-listing.html">Post a Listing</a>
+          <a href="dashboard.html">My Dashboard</a>
+          <a href="my-listings.html">Manage Listings</a>
+          <a href="messages.html">Inquiries</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:var(--color-accent)" aria-hidden="true"></i> for home seekers everywhere</p>
+    </div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+<script>
+document.querySelectorAll('[data-mod]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var a = btn.getAttribute('data-mod');
+    var map = {approve:['Listing approved and published.','success'],reject:['Listing rejected.','warning'],
+      review:['Opening content for review…','info'],dismiss:['Report dismissed.','success'],remove:['Listing removed.','warning'],
+      role:['Role updated.','success'],suspend:['User suspended.','warning'],reinstate:['User reinstated.','success']};
+    var m = map[a] || ['Done.','info'];
+    showToast(m[0], m[1]);
+    if (a==='approve'||a==='reject'||a==='remove'){ var row=btn.closest('tr'); if(row){ row.style.transition='opacity .2s'; row.style.opacity='.4'; } }
+  });
+});
+</script>
+</body></html>

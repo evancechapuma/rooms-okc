@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Listings — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-top">
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
+      <a href="find-agent.html" class="navbar__link">Agents</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <a href="post-listing.html" class="btn btn--accent btn--sm"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+      <div class="dropdown">
+        <button class="avatar-btn" data-dropdown-trigger aria-label="Account menu" aria-haspopup="true" aria-expanded="false">JD</button>
+        <div class="dropdown__menu" role="menu">
+          <a href="dashboard.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Dashboard</a>
+          <a href="my-listings.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+          <a href="favourites.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+          <a href="messages.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+          <div class="dropdown__divider"></div>
+          <a href="profile.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+          <button class="dropdown__item is-danger" role="menuitem"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</button>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
+    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
+    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
+    <a href="messages.html" class="btn btn--ghost" style="width:100%">Messages</a>
+    <hr class="divider">
+    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+  </div>
+</div>
+<div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="Dashboard navigation">
+      <a href="dashboard.html"      class="dash-nav-item "><i class="fa-solid fa-gauge" aria-hidden="true"></i> Overview</a>
+      <a href="my-listings.html"    class="dash-nav-item is-active"><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+      <a href="favourites.html"     class="dash-nav-item "><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+      <a href="saved-searches.html" class="dash-nav-item "><i class="fa-solid fa-bell" aria-hidden="true"></i> Saved Searches</a>
+      <a href="messages.html"       class="dash-nav-item "><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+      <a href="profile.html"        class="dash-nav-item "><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+      <hr class="divider">
+      <a href="post-listing.html" class="btn btn--accent btn--sm" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    </aside>
+  <main class="dashboard-main" data-tabs-container>
+      <nav class="mobile-dash-nav" aria-label="Dashboard sections">
+        <a href="dashboard.html"      class="dash-nav-item "><i class="fa-solid fa-gauge" aria-hidden="true"></i> Overview</a>
+        <a href="my-listings.html"    class="dash-nav-item is-active"><i class="fa-solid fa-list" aria-hidden="true"></i> Listings</a>
+        <a href="favourites.html"     class="dash-nav-item "><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+        <a href="saved-searches.html" class="dash-nav-item "><i class="fa-solid fa-bell" aria-hidden="true"></i> Searches</a>
+        <a href="messages.html"       class="dash-nav-item "><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+        <a href="profile.html"        class="dash-nav-item "><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+      </nav>
+      <div class="dashboard-header flex items-center justify-between" style="flex-wrap:wrap;gap:var(--space-3)">
+        <div>
+          <h1>My Listings</h1>
+          <p class="text-muted">Manage, edit, and track the performance of your properties.</p>
+        </div>
+        <a href="post-listing.html" class="btn btn--accent"><i class="fa-solid fa-plus" aria-hidden="true"></i> New Listing</a>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Listing status">
+        <button class="tab-btn is-active" data-tab="tab-active"  role="tab" aria-selected="true">Active <span class="text-faint">(4)</span></button>
+        <button class="tab-btn" data-tab="tab-paused"  role="tab" aria-selected="false">Paused <span class="text-faint">(2)</span></button>
+        <button class="tab-btn" data-tab="tab-expired" role="tab" aria-selected="false">Expired <span class="text-faint">(0)</span></button>
+      </div>
+
+      <!-- ACTIVE -->
+      <div class="tab-panel is-active" id="tab-active" role="tabpanel">
+        <div class="card" style="overflow-x:auto">
+          <table class="listing-table">
+            <thead>
+              <tr><th>Property</th><th>Status</th><th>Price</th><th>Views</th><th>Saves</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ml1/120/90" alt=""><div><div class="font-semibold">Modern 2-Bed Apartment</div><div class="text-sm text-muted">123 River St, Springfield</div></div></div></td>
+                <td><span class="badge badge--active">Active</span></td>
+                <td class="font-semibold">$1,450/mo</td>
+                <td>842</td><td>37</td>
+                <td><div class="listing-table__actions"><a href="listing-detail.html" class="btn btn--ghost btn--icon btn--sm" aria-label="View"><i class="fa-solid fa-eye"></i></a><a href="post-listing.html" class="btn btn--ghost btn--icon btn--sm" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button class="btn btn--ghost btn--icon btn--sm" aria-label="Pause" data-action="pause"><i class="fa-solid fa-pause"></i></button><button class="btn btn--ghost btn--icon btn--sm" aria-label="Delete" data-action="delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ml2/120/90" alt=""><div><div class="font-semibold">Cozy Studio Downtown</div><div class="text-sm text-muted">88 Center Ave, Metropolis</div></div></div></td>
+                <td><span class="badge badge--active">Active</span></td>
+                <td class="font-semibold">$920/mo</td>
+                <td>513</td><td>21</td>
+                <td><div class="listing-table__actions"><a href="listing-detail.html" class="btn btn--ghost btn--icon btn--sm" aria-label="View"><i class="fa-solid fa-eye"></i></a><a href="post-listing.html" class="btn btn--ghost btn--icon btn--sm" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button class="btn btn--ghost btn--icon btn--sm" aria-label="Pause" data-action="pause"><i class="fa-solid fa-pause"></i></button><button class="btn btn--ghost btn--icon btn--sm" aria-label="Delete" data-action="delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ml3/120/90" alt=""><div><div class="font-semibold">Family House with Garden</div><div class="text-sm text-muted">42 Oak Lane, Rivertown</div></div></div></td>
+                <td><span class="badge badge--active">Active</span></td>
+                <td class="font-semibold">$385,000</td>
+                <td>1,204</td><td>96</td>
+                <td><div class="listing-table__actions"><a href="listing-detail.html" class="btn btn--ghost btn--icon btn--sm" aria-label="View"><i class="fa-solid fa-eye"></i></a><a href="post-listing.html" class="btn btn--ghost btn--icon btn--sm" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button class="btn btn--ghost btn--icon btn--sm" aria-label="Pause" data-action="pause"><i class="fa-solid fa-pause"></i></button><button class="btn btn--ghost btn--icon btn--sm" aria-label="Delete" data-action="delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ml4/120/90" alt=""><div><div class="font-semibold">Shared Room Near Campus</div><div class="text-sm text-muted">15 College Rd, Eastside</div></div></div></td>
+                <td><span class="badge badge--active">Active</span></td>
+                <td class="font-semibold">$480/mo</td>
+                <td>329</td><td>14</td>
+                <td><div class="listing-table__actions"><a href="listing-detail.html" class="btn btn--ghost btn--icon btn--sm" aria-label="View"><i class="fa-solid fa-eye"></i></a><a href="post-listing.html" class="btn btn--ghost btn--icon btn--sm" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button class="btn btn--ghost btn--icon btn--sm" aria-label="Pause" data-action="pause"><i class="fa-solid fa-pause"></i></button><button class="btn btn--ghost btn--icon btn--sm" aria-label="Delete" data-action="delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PAUSED -->
+      <div class="tab-panel" id="tab-paused" role="tabpanel">
+        <div class="card" style="overflow-x:auto">
+          <table class="listing-table">
+            <thead><tr><th>Property</th><th>Status</th><th>Price</th><th>Views</th><th>Saves</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ml5/120/90" alt=""><div><div class="font-semibold">Lakeside Cabin Retreat</div><div class="text-sm text-muted">7 Pine Trail, Lakeview</div></div></div></td>
+                <td><span class="badge badge--paused">Paused</span></td>
+                <td class="font-semibold">$210/night</td>
+                <td>655</td><td>48</td>
+                <td><div class="listing-table__actions"><a href="listing-detail.html" class="btn btn--ghost btn--icon btn--sm" aria-label="View"><i class="fa-solid fa-eye"></i></a><button class="btn btn--ghost btn--icon btn--sm" aria-label="Resume" data-action="resume"><i class="fa-solid fa-play"></i></button><button class="btn btn--ghost btn--icon btn--sm" aria-label="Delete" data-action="delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><div class="flex items-center gap-3"><img class="listing-table__thumb" src="https://picsum.photos/seed/ml6/120/90" alt=""><div><div class="font-semibold">Penthouse with Skyline View</div><div class="text-sm text-muted">300 High St, Metropolis</div></div></div></td>
+                <td><span class="badge badge--paused">Paused</span></td>
+                <td class="font-semibold">$2,900/mo</td>
+                <td>1,087</td><td>132</td>
+                <td><div class="listing-table__actions"><a href="listing-detail.html" class="btn btn--ghost btn--icon btn--sm" aria-label="View"><i class="fa-solid fa-eye"></i></a><button class="btn btn--ghost btn--icon btn--sm" aria-label="Resume" data-action="resume"><i class="fa-solid fa-play"></i></button><button class="btn btn--ghost btn--icon btn--sm" aria-label="Delete" data-action="delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- EXPIRED (empty state) -->
+      <div class="tab-panel" id="tab-expired" role="tabpanel">
+        <div class="card">
+          <div class="empty-state">
+            <div class="empty-state__icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></div>
+            <h3 class="empty-state__title">No expired listings</h3>
+            <p class="empty-state__text">Listings that pass their expiry date will appear here. You can renew them anytime.</p>
+            <a href="post-listing.html" class="btn btn--primary"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post your first listing</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Rooms <span style="color:var(--color-primary)">OKC</span></span></a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home across the country.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Browse</p>
+        <nav class="footer__links" aria-label="Browse listings">
+          <a href="listings.html?type=sale">Homes for Sale</a>
+          <a href="listings.html?type=rent">Homes for Rent</a>
+          <a href="listings.html?type=shared">Shared / Rooms</a>
+          <a href="listings.html?type=short">Short-Term Stays</a>
+          <a href="calculator.html">Affordability Calculator</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">For Listers</p>
+        <nav class="footer__links" aria-label="Lister resources">
+          <a href="post-listing.html">Post a Listing</a>
+          <a href="dashboard.html">My Dashboard</a>
+          <a href="my-listings.html">Manage Listings</a>
+          <a href="messages.html">Inquiries</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:var(--color-accent)" aria-hidden="true"></i> for home seekers everywhere</p>
+    </div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+<script>
+document.querySelectorAll('[data-action]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var a = btn.getAttribute('data-action');
+    var msg = a==='delete' ? 'Listing deleted.' : a==='pause' ? 'Listing paused.' : a==='resume' ? 'Listing resumed and is now live.' : 'Done.';
+    var type = a==='delete' ? 'warning' : 'success';
+    showToast(msg, type);
+  });
+});
+</script>
+</body></html>

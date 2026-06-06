@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affordability Calculator — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-top">
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
+      <a href="find-agent.html" class="navbar__link">Agents</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <a href="post-listing.html" class="btn btn--accent btn--sm"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+      <div class="dropdown">
+        <button class="avatar-btn" data-dropdown-trigger aria-label="Account menu" aria-haspopup="true" aria-expanded="false">JD</button>
+        <div class="dropdown__menu" role="menu">
+          <a href="dashboard.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Dashboard</a>
+          <a href="my-listings.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+          <a href="favourites.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+          <a href="messages.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+          <div class="dropdown__divider"></div>
+          <a href="profile.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+          <button class="dropdown__item is-danger" role="menuitem"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</button>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
+    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
+    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
+    <a href="messages.html" class="btn btn--ghost" style="width:100%">Messages</a>
+    <hr class="divider">
+    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+  </div>
+</div>
+<main class="section">
+  <div class="container">
+    <header style="text-align:center;max-width:640px;margin:0 auto var(--space-7)">
+      <h1>Affordability Calculator</h1>
+      <p class="text-muted">Estimate your monthly payment. Adjust the numbers and the results update instantly.</p>
+    </header>
+
+    <div class="calc-layout">
+      <!-- Inputs -->
+      <form id="calc-form" class="card" style="padding:var(--space-6)">
+        <div class="field">
+          <label class="field__label" for="c-price">Property Price</label>
+          <div class="input-wrap"><span class="input-affix">$</span><input type="number" id="c-price" class="input" value="350000" min="0" step="1000" style="padding-left:32px"></div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="c-down">Down Payment</label>
+          <div class="flex gap-3 items-center" style="margin-bottom:var(--space-2)">
+            <label class="check-wrap text-sm"><input type="radio" name="dp-mode" value="percent" checked> <span>Percent</span></label>
+            <label class="check-wrap text-sm"><input type="radio" name="dp-mode" value="amount"> <span>Amount</span></label>
+          </div>
+          <div class="input-wrap"><input type="number" id="c-down" class="input" value="20" min="0" step="1" style="padding-right:36px"><span class="input-affix input-affix--right" id="down-suffix">%</span></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+          <div class="field">
+            <label class="field__label" for="c-rate">Interest Rate</label>
+            <div class="input-wrap"><input type="number" id="c-rate" class="input" value="6.5" min="0" step="0.05" style="padding-right:36px"><span class="input-affix input-affix--right">%</span></div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="c-term">Loan Term</label>
+            <select id="c-term" class="select"><option value="30" selected>30 years</option><option value="20">20 years</option><option value="15">15 years</option><option value="10">10 years</option></select>
+          </div>
+        </div>
+
+        <hr class="divider">
+        <p class="text-sm text-muted" style="margin-bottom:var(--space-4)">Optional costs (annual)</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+          <div class="field" style="margin-bottom:0">
+            <label class="field__label" for="c-tax">Property Tax</label>
+            <div class="input-wrap"><span class="input-affix">$</span><input type="number" id="c-tax" class="input" value="3600" min="0" step="100" style="padding-left:32px"></div>
+          </div>
+          <div class="field" style="margin-bottom:0">
+            <label class="field__label" for="c-ins">Home Insurance</label>
+            <div class="input-wrap"><span class="input-affix">$</span><input type="number" id="c-ins" class="input" value="1200" min="0" step="100" style="padding-left:32px"></div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Results -->
+      <div class="calc-result">
+        <span class="calc-result__label">Estimated monthly payment</span>
+        <div class="calc-result__monthly" id="c-monthly">$0</div>
+
+        <div class="calc-bar" aria-hidden="true">
+          <div class="calc-bar__seg calc-bar__seg--principal" style="width:0"></div>
+          <div class="calc-bar__seg calc-bar__seg--interest" style="width:0"></div>
+          <div class="calc-bar__seg calc-bar__seg--tax" style="width:0"></div>
+        </div>
+
+        <div class="calc-breakdown">
+          <div class="calc-breakdown-item">
+            <span class="calc-breakdown-item__label"><span class="calc-breakdown-item__dot" style="background:var(--color-primary)"></span> Principal</span>
+            <span class="calc-breakdown-item__val" id="bd-principal">$0</span>
+          </div>
+          <div class="calc-breakdown-item">
+            <span class="calc-breakdown-item__label"><span class="calc-breakdown-item__dot" style="background:var(--color-accent)"></span> Interest</span>
+            <span class="calc-breakdown-item__val" id="bd-interest">$0</span>
+          </div>
+          <div class="calc-breakdown-item">
+            <span class="calc-breakdown-item__label"><span class="calc-breakdown-item__dot" style="background:var(--color-info)"></span> Taxes &amp; insurance</span>
+            <span class="calc-breakdown-item__val" id="bd-tax">$0</span>
+          </div>
+          <hr class="divider" style="margin-block:var(--space-2)">
+          <div class="calc-breakdown-item">
+            <span class="calc-breakdown-item__label">Loan amount</span>
+            <span class="calc-breakdown-item__val" id="c-loan-amt">$0</span>
+          </div>
+          <div class="calc-breakdown-item">
+            <span class="calc-breakdown-item__label">Down payment</span>
+            <span class="calc-breakdown-item__val" id="c-down-summary">$0</span>
+          </div>
+        </div>
+
+        <p class="text-xs text-faint" style="margin-top:var(--space-5)">Estimates only. Actual rates and payments vary by lender and location. Principal/interest split shown is for the first payment.</p>
+        <a href="listings.html" class="btn btn--accent" style="width:100%;margin-top:var(--space-4)"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Browse homes in budget</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Rooms <span style="color:var(--color-primary)">OKC</span></span></a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home across the country.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Browse</p>
+        <nav class="footer__links" aria-label="Browse listings">
+          <a href="listings.html?type=sale">Homes for Sale</a>
+          <a href="listings.html?type=rent">Homes for Rent</a>
+          <a href="listings.html?type=shared">Shared / Rooms</a>
+          <a href="listings.html?type=short">Short-Term Stays</a>
+          <a href="calculator.html">Affordability Calculator</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">For Listers</p>
+        <nav class="footer__links" aria-label="Lister resources">
+          <a href="post-listing.html">Post a Listing</a>
+          <a href="dashboard.html">My Dashboard</a>
+          <a href="my-listings.html">Manage Listings</a>
+          <a href="messages.html">Inquiries</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:var(--color-accent)" aria-hidden="true"></i> for home seekers everywhere</p>
+    </div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="js/calculator.js"></script>
+</body></html>

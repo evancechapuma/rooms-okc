@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="auth-layout">
+  <!-- Form panel -->
+  <div class="auth-panel">
+    <div class="auth-card">
+      <a href="index.html" class="auth-card__logo"><i class="fa-solid fa-house" aria-hidden="true"></i> Rooms <span style="color:var(--color-primary)">OKC</span></a>
+      <h1>Welcome back</h1>
+      <p>Log in to manage your listings, messages, and saved homes.</p>
+
+      <div class="social-login">
+        <button type="button" class="btn-social"><i class="fa-brands fa-google" aria-hidden="true"></i> Google</button>
+        <button type="button" class="btn-social"><i class="fa-brands fa-apple" aria-hidden="true"></i> Apple</button>
+      </div>
+      <div class="auth-divider">or continue with email</div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label class="field__label field__label--required" for="login-email">Email Address</label>
+          <input type="email" id="login-email" class="input" placeholder="you@example.com" autocomplete="email">
+          <span class="field__error">Please enter a valid email address.</span>
+        </div>
+        <div class="field">
+          <label class="field__label field__label--required" for="login-pass">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="login-pass" class="input" placeholder="••••••••" autocomplete="current-password" style="padding-right:44px">
+            <button type="button" class="input-wrap__toggle" data-toggle-pass="login-pass" aria-label="Show password"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+          </div>
+          <span class="field__error">Please enter your password.</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-5)">
+          <label class="check-wrap"><input type="checkbox"> <span>Remember me</span></label>
+          <a href="#" class="text-sm">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg" style="width:100%">Log In</button>
+      </form>
+
+      <p class="text-sm" style="text-align:center;margin-top:var(--space-5)">Don&#39;t have an account? <a href="signup.html">Sign up free</a></p>
+    </div>
+  </div>
+  <!-- Decorative panel -->
+  <div class="auth-deco">
+    <img src="https://picsum.photos/seed/authlogin/900/1200" alt="Modern home interior">
+    <div class="auth-deco__overlay">
+      <h2>Find your next home</h2>
+      <p>Thousands of verified listings across 180+ cities, updated daily.</p>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script>
+document.querySelectorAll('[data-toggle-pass]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var inp = document.getElementById(btn.getAttribute('data-toggle-pass'));
+    var icon = btn.querySelector('i');
+    if (inp.type === 'password'){ inp.type='text'; icon.className='fa-solid fa-eye-slash'; btn.setAttribute('aria-label','Hide password'); }
+    else { inp.type='password'; icon.className='fa-solid fa-eye'; btn.setAttribute('aria-label','Show password'); }
+  });
+});
+document.getElementById('login-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var email = document.getElementById('login-email');
+  var pass  = document.getElementById('login-pass');
+  var ok = true;
+  var emailField = email.closest('.field');
+  var passField  = pass.closest('.field');
+  emailField.classList.remove('is-error'); passField.classList.remove('is-error');
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())){ emailField.classList.add('is-error'); ok=false; }
+  if (!pass.value){ passField.classList.add('is-error'); ok=false; }
+  if (ok){ showToast('Logged in successfully! Redirecting…','success'); setTimeout(function(){ window.location.href='dashboard.html'; }, 900); }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favourites — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-top">
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
+      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
+      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
+      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
+      <a href="find-agent.html" class="navbar__link">Agents</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <a href="post-listing.html" class="btn btn--accent btn--sm"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+      <div class="dropdown">
+        <button class="avatar-btn" data-dropdown-trigger aria-label="Account menu" aria-haspopup="true" aria-expanded="false">JD</button>
+        <div class="dropdown__menu" role="menu">
+          <a href="dashboard.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Dashboard</a>
+          <a href="my-listings.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+          <a href="favourites.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+          <a href="messages.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+          <div class="dropdown__divider"></div>
+          <a href="profile.html" class="dropdown__item" role="menuitem"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+          <button class="dropdown__item is-danger" role="menuitem"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</button>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
+    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
+    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
+    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
+    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <hr class="divider">
+    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
+    <a href="messages.html" class="btn btn--ghost" style="width:100%">Messages</a>
+    <hr class="divider">
+    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+  </div>
+</div>
+<div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="Dashboard navigation">
+      <a href="dashboard.html"      class="dash-nav-item "><i class="fa-solid fa-gauge" aria-hidden="true"></i> Overview</a>
+      <a href="my-listings.html"    class="dash-nav-item "><i class="fa-solid fa-list" aria-hidden="true"></i> My Listings</a>
+      <a href="favourites.html"     class="dash-nav-item is-active"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+      <a href="saved-searches.html" class="dash-nav-item "><i class="fa-solid fa-bell" aria-hidden="true"></i> Saved Searches</a>
+      <a href="messages.html"       class="dash-nav-item "><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+      <a href="profile.html"        class="dash-nav-item "><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+      <hr class="divider">
+      <a href="post-listing.html" class="btn btn--accent btn--sm" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
+    </aside>
+  <main class="dashboard-main">
+      <nav class="mobile-dash-nav" aria-label="Dashboard sections">
+        <a href="dashboard.html"      class="dash-nav-item "><i class="fa-solid fa-gauge" aria-hidden="true"></i> Overview</a>
+        <a href="my-listings.html"    class="dash-nav-item "><i class="fa-solid fa-list" aria-hidden="true"></i> Listings</a>
+        <a href="favourites.html"     class="dash-nav-item is-active"><i class="fa-solid fa-heart" aria-hidden="true"></i> Favourites</a>
+        <a href="saved-searches.html" class="dash-nav-item "><i class="fa-solid fa-bell" aria-hidden="true"></i> Searches</a>
+        <a href="messages.html"       class="dash-nav-item "><i class="fa-solid fa-envelope" aria-hidden="true"></i> Messages</a>
+        <a href="profile.html"        class="dash-nav-item "><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
+      </nav>
+      <div class="dashboard-header">
+        <h1>Saved Favourites</h1>
+        <p class="text-muted">Homes you've saved. Tap the heart to remove one.</p>
+      </div>
+      <div class="listing-grid" id="fav-grid"></div>
+      <div class="empty-state" id="fav-empty" style="display:none">
+        <div class="empty-state__icon"><i class="fa-regular fa-heart" aria-hidden="true"></i></div>
+        <h3 class="empty-state__title">No favourites yet</h3>
+        <p class="empty-state__text">Start browsing and tap the heart on any listing to save it here.</p>
+        <a href="listings.html" class="btn btn--primary"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Browse Listings</a>
+      </div>
+    </main>
+  </div>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Rooms <span style="color:var(--color-primary)">OKC</span></span></a>
+        <p>Your trusted marketplace for buying, renting, and discovering the perfect home across the country.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Browse</p>
+        <nav class="footer__links" aria-label="Browse listings">
+          <a href="listings.html?type=sale">Homes for Sale</a>
+          <a href="listings.html?type=rent">Homes for Rent</a>
+          <a href="listings.html?type=shared">Shared / Rooms</a>
+          <a href="listings.html?type=short">Short-Term Stays</a>
+          <a href="calculator.html">Affordability Calculator</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">For Listers</p>
+        <nav class="footer__links" aria-label="Lister resources">
+          <a href="post-listing.html">Post a Listing</a>
+          <a href="dashboard.html">My Dashboard</a>
+          <a href="my-listings.html">Manage Listings</a>
+          <a href="messages.html">Inquiries</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:var(--color-accent)" aria-hidden="true"></i> for home seekers everywhere</p>
+    </div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+<script>
+var FAVS = [
+  {img:1, type:'rent',  label:'For Rent', lister:'Owner', price:'$1,450/mo', title:'Modern 2-Bed Apartment', loc:'Springfield, IL', beds:2, baths:1, area:'980'},
+  {img:2, type:'sale',  label:'For Sale', lister:'Agent', price:'$385,000', title:'Family House with Garden', loc:'Rivertown, OH', beds:4, baths:3, area:'2,150'},
+  {img:3, type:'short', label:'Short-Term', lister:'Owner', price:'$210/night', title:'Lakeside Cabin Retreat', loc:'Lakeview, MN', beds:3, baths:2, area:'1,400'},
+  {img:4, type:'shared',label:'Shared', lister:'Owner', price:'$480/mo', title:'Shared Room Near Campus', loc:'Eastside, MA', beds:1, baths:1, area:'320'},
+  {img:5, type:'rent',  label:'For Rent', lister:'Agent', price:'$920/mo', title:'Cozy Studio Downtown', loc:'Metropolis, NY', beds:1, baths:1, area:'540'},
+  {img:6, type:'sale',  label:'For Sale', lister:'Agent', price:'$629,000', title:'Penthouse with Skyline View', loc:'Metropolis, NY', beds:3, baths:2, area:'1,820'}
+];
+var typeClass = {sale:'sale', rent:'rent', shared:'shared', short:'short'};
+var listerClass = {Owner:'owner', Agent:'agent'};
+var listerIcon = {Owner:'fa-user', Agent:'fa-briefcase'};
+var lastRemoved = null;
+
+function renderFavs(){
+  var grid = document.getElementById('fav-grid');
+  var empty = document.getElementById('fav-empty');
+  if (!FAVS.length){ grid.innerHTML=''; empty.style.display='flex'; return; }
+  empty.style.display='none';
+  grid.innerHTML = FAVS.map(function(p, i){ return '\
+    <article class="card-listing">\
+      <div class="card-listing__img-wrap">\
+        <img src="https://picsum.photos/seed/fav'+p.img+'/800/600" alt="'+p.title+'" class="card-listing__img" loading="lazy" width="800" height="600">\
+        <div class="card-listing__badges"><span class="badge badge--'+typeClass[p.type]+'">'+p.label+'</span></div>\
+        <span class="card-listing__lister card-listing__lister--'+listerClass[p.lister]+'"><i class="fa-solid '+listerIcon[p.lister]+'" aria-hidden="true"></i>'+p.lister+'</span>\
+        <button class="card-listing__fav is-saved" data-remove="'+i+'" aria-label="Remove from favourites"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>\
+      </div>\
+      <div class="card-listing__body" onclick="window.location=\'listing-detail.html\'" style="cursor:pointer">\
+        <div class="card-listing__price">'+p.price+'</div>\
+        <h3 class="card-listing__title">'+p.title+'</h3>\
+        <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>'+p.loc+'</p>\
+        <div class="card-listing__meta">\
+          <span class="card-listing__meta-item"><i class="fa-solid fa-bed" aria-hidden="true"></i><span><strong>'+p.beds+'</strong> bed'+(p.beds>1?'s':'')+'</span></span>\
+          <span class="card-listing__meta-item"><i class="fa-solid fa-bath" aria-hidden="true"></i><span><strong>'+p.baths+'</strong> bath</span></span>\
+          <span class="card-listing__meta-item"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i><span><strong>'+p.area+'</strong> ft²</span></span>\
+        </div>\
+      </div>\
+    </article>';
+  }).join('');
+  grid.querySelectorAll('[data-remove]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      var idx = parseInt(btn.getAttribute('data-remove'),10);
+      lastRemoved = { item: FAVS[idx], index: idx };
+      FAVS.splice(idx,1);
+      renderFavs();
+      showToast('Removed from favourites. <button onclick="undoRemove()" style="background:none;border:none;color:inherit;text-decoration:underline;cursor:pointer;font:inherit;padding:0;margin-left:6px">Undo</button>', 'info', 5000);
+    });
+  });
+}
+window.undoRemove = function(){
+  if (!lastRemoved) return;
+  FAVS.splice(lastRemoved.index, 0, lastRemoved.item);
+  lastRemoved = null;
+  renderFavs();
+  showToast('Favourite restored.', 'success');
+};
+renderFavs();
+</script>
+</body></html>

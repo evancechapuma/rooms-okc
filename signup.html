@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="auth-layout">
+  <div class="auth-deco">
+    <img src="https://picsum.photos/seed/authsignup/900/1200" alt="Bright living space">
+    <div class="auth-deco__overlay">
+      <h2>List, search, connect</h2>
+      <p>Join 98,000+ members buying, renting, and listing homes the easy way.</p>
+    </div>
+  </div>
+  <div class="auth-panel">
+    <div class="auth-card">
+      <a href="index.html" class="auth-card__logo"><i class="fa-solid fa-house" aria-hidden="true"></i> Rooms <span style="color:var(--color-primary)">OKC</span></a>
+      <h1>Create your account</h1>
+      <p>It's free to join. Start in less than a minute.</p>
+
+      <div class="social-login">
+        <button type="button" class="btn-social"><i class="fa-brands fa-google" aria-hidden="true"></i> Google</button>
+        <button type="button" class="btn-social"><i class="fa-brands fa-apple" aria-hidden="true"></i> Apple</button>
+      </div>
+      <div class="auth-divider">or sign up with email</div>
+
+      <form id="signup-form" novalidate>
+        <div class="field">
+          <label class="field__label field__label--required" for="su-name">Full Name</label>
+          <input type="text" id="su-name" class="input" placeholder="Jane Smith" autocomplete="name">
+          <span class="field__error">Please enter your name.</span>
+        </div>
+        <div class="field">
+          <label class="field__label field__label--required" for="su-email">Email Address</label>
+          <input type="email" id="su-email" class="input" placeholder="you@example.com" autocomplete="email">
+          <span class="field__error">Please enter a valid email address.</span>
+        </div>
+        <div class="field">
+          <label class="field__label field__label--required">I am…</label>
+          <div class="account-type-grid" id="acct-type" role="radiogroup" aria-label="Account type">
+            <button type="button" class="account-type-btn is-selected" data-value="looking" role="radio" aria-checked="true">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Looking</span>
+            </button>
+            <button type="button" class="account-type-btn" data-value="owner" role="radio" aria-checked="false">
+              <i class="fa-solid fa-house-user" aria-hidden="true"></i><span>Owner</span>
+            </button>
+            <button type="button" class="account-type-btn" data-value="agent" role="radio" aria-checked="false">
+              <i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>Agent</span>
+            </button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field__label field__label--required" for="su-pass">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="su-pass" class="input" placeholder="At least 8 characters" autocomplete="new-password" style="padding-right:44px">
+            <button type="button" class="input-wrap__toggle" data-toggle-pass="su-pass" aria-label="Show password"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+          </div>
+          <span class="field__error">Password must be at least 8 characters.</span>
+        </div>
+        <div class="field">
+          <label class="field__label field__label--required" for="su-confirm">Confirm Password</label>
+          <div class="input-wrap">
+            <input type="password" id="su-confirm" class="input" placeholder="Re-enter your password" autocomplete="new-password" style="padding-right:44px">
+            <button type="button" class="input-wrap__toggle" data-toggle-pass="su-confirm" aria-label="Show password"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+          </div>
+          <span class="field__error">Passwords do not match.</span>
+        </div>
+        <label class="check-wrap" style="margin-bottom:var(--space-5)"><input type="checkbox" id="su-terms"> <span class="text-sm">I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></span></label>
+        <button type="submit" class="btn btn--primary btn--lg" style="width:100%">Create Account</button>
+      </form>
+
+      <p class="text-sm" style="text-align:center;margin-top:var(--space-5)">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script>
+document.querySelectorAll('[data-toggle-pass]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var inp = document.getElementById(btn.getAttribute('data-toggle-pass'));
+    var icon = btn.querySelector('i');
+    if (inp.type === 'password'){ inp.type='text'; icon.className='fa-solid fa-eye-slash'; }
+    else { inp.type='password'; icon.className='fa-solid fa-eye'; }
+  });
+});
+// Account type selector
+document.querySelectorAll('#acct-type .account-type-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('#acct-type .account-type-btn').forEach(function(b){ b.classList.remove('is-selected'); b.setAttribute('aria-checked','false'); });
+    btn.classList.add('is-selected'); btn.setAttribute('aria-checked','true');
+  });
+});
+document.getElementById('signup-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name=document.getElementById('su-name'), email=document.getElementById('su-email'),
+      pass=document.getElementById('su-pass'), conf=document.getElementById('su-confirm');
+  var ok=true;
+  [name,email,pass,conf].forEach(function(el){ el.closest('.field').classList.remove('is-error'); });
+  if(!name.value.trim()){ name.closest('.field').classList.add('is-error'); ok=false; }
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())){ email.closest('.field').classList.add('is-error'); ok=false; }
+  if(pass.value.length<8){ pass.closest('.field').classList.add('is-error'); ok=false; }
+  if(conf.value!==pass.value || !conf.value){ conf.closest('.field').classList.add('is-error'); ok=false; }
+  if(!document.getElementById('su-terms').checked){ showToast('Please agree to the Terms to continue.','warning'); ok=false; }
+  if(ok){ showToast('Account created! Welcome to Rooms OKC.','success'); setTimeout(function(){ window.location.href='dashboard.html'; },900); }
+});
+</script>
+</body>
+</html>

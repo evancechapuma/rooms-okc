@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern 3-Bed Family Home — Rooms OKC</title>
-  <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+  <title>Private Room – Midtown — Rooms OKC</title>
+  <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s||'light');})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,524 +15,356 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
 </head>
-<body class="page-top">
+<body>
 
 <!-- NAVBAR -->
 <header class="navbar" role="banner">
   <div class="navbar__inner">
-    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="navbar__logo-word">Rooms<span>OKC</span></span></a>
-    <nav class="navbar__links" aria-label="Main navigation">
-      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
-      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
-      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
-      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
-      <a href="find-agent.html" class="navbar__link">Agents</a>
-    </nav>
+    <a href="index.html" class="navbar__logo" aria-label="Rooms OKC Home">
+      <i class="fa-solid fa-house" aria-hidden="true"></i>
+      <span class="navbar__logo-word">Rooms<span>OKC</span></span>
+    </a>
     <div class="navbar__actions">
       <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
-      <a href="login.html" class="btn btn--ghost btn--sm">Log in</a>
-      <a href="signup.html" class="btn btn--primary btn--sm">Sign up</a>
-      <button class="nav-hamburger" aria-label="Open menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      <a href="contact.html" class="btn btn--primary btn--sm">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us
+      </a>
+      <button class="nav-hamburger" aria-label="Open navigation menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </div>
 </header>
 
+<!-- MOBILE DRAWER -->
 <div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="nav-drawer__panel">
-    <button class="nav-drawer__close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
-    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
-    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
-    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
+    <a href="contact.html" class="nav-drawer__link">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us
+    </a>
     <hr class="divider">
-    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
-    <a href="dashboard.html" class="btn btn--outline" style="width:100%">Dashboard</a>
-    <a href="messages.html" class="btn btn--ghost" style="width:100%">Messages</a>
-    <hr class="divider">
-    <a href="profile.html" class="nav-drawer__link"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</a>
-    <a href="login.html" class="nav-drawer__link" style="color:var(--color-danger)"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sign out</a>
+    <button class="theme-toggle btn btn--ghost" style="width:100%;justify-content:flex-start;gap:var(--space-3)">
+      <i class="fa-solid fa-moon" aria-hidden="true"></i> Toggle Dark Mode
+    </button>
   </div>
 </div>
 
-<main>
-  <div class="container" style="padding-top:var(--space-6);padding-bottom:var(--space-8)">
+<main class="page-top">
+  <div class="container" style="padding-block:var(--space-5) var(--space-6)">
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb" style="margin-bottom:var(--space-4)" aria-label="Breadcrumb">
+    <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:var(--space-5)">
       <a href="index.html">Home</a>
       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-      <a href="listings.html?type=sale">For Sale</a>
-      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-      <span>Greenwood Heights</span>
+      <span>Private Room – Midtown</span>
     </nav>
 
     <div class="detail-layout">
-      <!-- LEFT COLUMN -->
+
+      <!-- LEFT: Room content -->
       <div>
+
         <!-- Gallery -->
-        <div class="gallery" role="region" aria-label="Property photos">
+        <div class="gallery" role="region" aria-label="Room photos">
           <div class="gallery__main" id="main-img-wrap">
-            <img src="https://picsum.photos/seed/prop1/1200/800" alt="Front view of the property" id="main-img" style="width:100%;height:100%;object-fit:cover;display:block" width="1200" height="800">
-            <button class="gallery__nav gallery__nav--prev" id="gallery-prev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="gallery__nav gallery__nav--next" id="gallery-next" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+            <img src="https://picsum.photos/seed/room1/1200/800" alt="Room photo 1 of 4"
+                 id="main-img" style="width:100%;height:100%;object-fit:cover;display:block" width="1200" height="800">
+            <button class="gallery__nav gallery__nav--prev" id="gallery-prev" aria-label="Previous photo">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="gallery__nav gallery__nav--next" id="gallery-next" aria-label="Next photo">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
             <span class="gallery__counter" id="gallery-counter">1 / 4</span>
           </div>
-          <div class="gallery__thumbs" role="list" aria-label="Photo thumbnails">
-            <div class="gallery__thumb is-active" role="listitem" tabindex="0" aria-label="Photo 1">
-              <img src="https://picsum.photos/seed/prop1/400/300" alt="Front exterior" width="400" height="300">
-            </div>
-            <div class="gallery__thumb" role="listitem" tabindex="0" aria-label="Photo 2">
-              <img src="https://picsum.photos/seed/prop1a/400/300" alt="Living room" width="400" height="300">
-            </div>
-            <div class="gallery__thumb" role="listitem" tabindex="0" aria-label="Photo 3">
-              <img src="https://picsum.photos/seed/prop1b/400/300" alt="Kitchen" width="400" height="300">
-            </div>
-            <div class="gallery__thumb" role="listitem" tabindex="0" aria-label="Photo 4">
-              <img src="https://picsum.photos/seed/prop1c/400/300" alt="Master bedroom" width="400" height="300">
-            </div>
+          <div class="gallery__thumbs" id="gallery-thumbs" role="list" aria-label="Room photo thumbnails">
+            <button class="gallery__thumb is-active" role="listitem" aria-label="View photo 1" onclick="setImg(0)">
+              <img src="https://picsum.photos/seed/room1/400/300" alt="" aria-hidden="true" loading="lazy" width="400" height="300">
+            </button>
+            <button class="gallery__thumb" role="listitem" aria-label="View photo 2" onclick="setImg(1)">
+              <img src="https://picsum.photos/seed/room1a/400/300" alt="" aria-hidden="true" loading="lazy" width="400" height="300">
+            </button>
+            <button class="gallery__thumb" role="listitem" aria-label="View photo 3" onclick="setImg(2)">
+              <img src="https://picsum.photos/seed/room1b/400/300" alt="" aria-hidden="true" loading="lazy" width="400" height="300">
+            </button>
+            <button class="gallery__thumb" role="listitem" aria-label="View photo 4" onclick="setImg(3)">
+              <img src="https://picsum.photos/seed/room1c/400/300" alt="" aria-hidden="true" loading="lazy" width="400" height="300">
+            </button>
           </div>
         </div>
 
-        <!-- Header block -->
-        <div style="margin-top:var(--space-5)">
-          <div class="flex gap-3 items-center" style="flex-wrap:wrap;margin-bottom:var(--space-3)">
-            <span class="badge badge--sale">For Sale</span>
-            <span class="badge badge--owner">By Owner</span>
-            <span class="text-faint text-sm"><i class="fa-solid fa-clock" aria-hidden="true"></i> Active for 12 days</span>
-          </div>
-          <h1 style="font-size:var(--text-3xl);margin-bottom:var(--space-2)">Modern 3-Bed Family Home</h1>
-          <p style="font-size:var(--text-xl);color:var(--color-text-muted);margin-bottom:var(--space-2)">
-            <i class="fa-solid fa-location-dot" style="color:var(--color-primary)" aria-hidden="true"></i>
-            42 Maple Close, Greenwood Heights, GH4 2LX
+        <!-- Room header -->
+        <div class="room-header">
+          <span class="badge badge--rent">Private Room</span>
+          <h1 class="room-header__title">Private Room – Midtown</h1>
+          <p class="room-header__location">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Midtown, Oklahoma City, OK
           </p>
-          <p style="font-size:var(--text-4xl);font-weight:700;color:var(--color-primary);margin-bottom:0">$285,000</p>
-        </div>
-
-        <!-- Key facts -->
-        <div class="key-facts" role="list" aria-label="Property key facts">
-          <div class="key-fact" role="listitem">
-            <div class="key-fact__icon" style="background:#eef2ff;color:#4f46e5"><i class="fa-solid fa-bed" aria-hidden="true"></i></div>
-            <div class="key-fact__body">
-              <div class="key-fact__val">3</div>
-              <div class="key-fact__label">Bedrooms</div>
-            </div>
-          </div>
-          <div class="key-fact" role="listitem">
-            <div class="key-fact__icon" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-shower" aria-hidden="true"></i></div>
-            <div class="key-fact__body">
-              <div class="key-fact__val">2</div>
-              <div class="key-fact__label">Bathrooms</div>
-            </div>
-          </div>
-          <div class="key-fact" role="listitem">
-            <div class="key-fact__icon" style="background:#dcfce7;color:#16a34a"><i class="fa-solid fa-vector-square" aria-hidden="true"></i></div>
-            <div class="key-fact__body">
-              <div class="key-fact__val">1,450</div>
-              <div class="key-fact__label">sq ft</div>
-            </div>
-          </div>
-          <div class="key-fact" role="listitem">
-            <div class="key-fact__icon" style="background:#ede9fe;color:#7c3aed"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
-            <div class="key-fact__body">
-              <div class="key-fact__val">Detached</div>
-              <div class="key-fact__label">Property Type</div>
-            </div>
-          </div>
+          <div class="room-header__price">$750<span>/mo</span></div>
         </div>
 
         <!-- Description -->
-        <section aria-labelledby="desc-heading" style="margin-bottom:var(--space-6)">
-          <h2 id="desc-heading" style="font-size:var(--text-xl);margin-bottom:var(--space-4)">About This Property</h2>
-          <p>Welcome to this beautifully presented three-bedroom detached family home, set on a quiet cul-de-sac in the sought-after Greenwood Heights area. This stunning property has been lovingly maintained by its current owners and offers spacious, light-filled accommodation throughout.</p>
-          <p>The ground floor features a generous open-plan kitchen/diner with bi-fold doors opening onto the landscaped rear garden, a separate living room, and a useful utility room. Upstairs you'll find three well-proportioned bedrooms, a family bathroom, and an en-suite to the master bedroom.</p>
-          <p>The property benefits from a private driveway with parking for two vehicles, a double garage, and a mature garden to the rear. Ideally situated within walking distance of excellent local schools, shops, and transport links.</p>
-        </section>
+        <div class="room-body">
+          <h2>About this room</h2>
+          <p>A bright, well-furnished private room in a spacious house in the heart of Midtown OKC. The room includes a queen bed, wardrobe, and desk. You'll have your own key and full access to the shared living room, kitchen, and two bathrooms.</p>
+          <p>The house is clean, quiet, and well-maintained. Ideal for a working professional or graduate student. Utilities (electricity, water, gas, and WiFi) are included in the monthly rent. No smoking inside. Pets negotiable.</p>
+          <p>Midtown is walkable to restaurants, coffee shops, and local businesses on NW 23rd. Easy access to downtown OKC via car or bike trail.</p>
+        </div>
 
         <!-- Amenities -->
-        <section aria-labelledby="amenities-heading" style="margin-bottom:var(--space-6)">
-          <h2 id="amenities-heading" style="font-size:var(--text-xl);margin-bottom:var(--space-4)">Features & Amenities</h2>
-          <div class="amenities-grid">
-            <div class="amenity-item"><i class="fa-solid fa-wifi" aria-hidden="true"></i> Superfast broadband</div>
-            <div class="amenity-item"><i class="fa-solid fa-car" aria-hidden="true"></i> Double garage</div>
-            <div class="amenity-item"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Private garden</div>
-            <div class="amenity-item"><i class="fa-solid fa-sun" aria-hidden="true"></i> South-facing aspect</div>
-            <div class="amenity-item"><i class="fa-solid fa-fire" aria-hidden="true"></i> Gas central heating</div>
-            <div class="amenity-item"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Alarm system</div>
-            <div class="amenity-item"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Fitted kitchen</div>
-            <div class="amenity-item"><i class="fa-solid fa-snowflake" aria-hidden="true"></i> Energy rating B</div>
-            <div class="amenity-item"><i class="fa-solid fa-dog" aria-hidden="true"></i> Pets considered</div>
-          </div>
-        </section>
+        <div class="room-amenities">
+          <h2 class="room-amenities__title">What's included</h2>
+          <ul class="room-amenities__list" aria-label="Room amenities">
+            <li class="room-amenities__item">
+              <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+              <span>WiFi Included</span>
+            </li>
+            <li class="room-amenities__item">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+              <span>Bills Included</span>
+            </li>
+            <li class="room-amenities__item">
+              <i class="fa-solid fa-couch" aria-hidden="true"></i>
+              <span>Fully Furnished</span>
+            </li>
+            <li class="room-amenities__item">
+              <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+              <span>Kitchen Access</span>
+            </li>
+            <li class="room-amenities__item">
+              <i class="fa-solid fa-shower" aria-hidden="true"></i>
+              <span>Shared Bathroom</span>
+            </li>
+            <li class="room-amenities__item">
+              <i class="fa-solid fa-square-parking" aria-hidden="true"></i>
+              <span>Parking Available</span>
+            </li>
+          </ul>
+        </div>
 
-        <!-- Location Details -->
-        <section aria-labelledby="location-heading" style="margin-bottom:var(--space-6)">
-          <h2 id="location-heading" style="font-size:var(--text-xl);margin-bottom:var(--space-4)">Location &amp; Neighbourhood</h2>
-          <p>Greenwood Heights is a popular residential area known for its excellent schools, green spaces, and strong community feel. The property is within walking distance of Greenwood Primary School (Ofsted Outstanding) and a short drive from the town centre.</p>
-          <p style="margin-bottom:var(--space-5)">Nearby amenities include a supermarket, doctors surgery, multiple parks, and regular bus services into the city centre. The nearest motorway junction is 4 miles away.</p>
-
-          <div class="nearby-grid">
-            <div class="nearby-card">
-              <div class="nearby-card__icon" style="background:#eef2ff;color:#4f46e5">
-                <i class="fa-solid fa-school" aria-hidden="true"></i>
-              </div>
-              <div class="nearby-card__info">
-                <span class="nearby-card__name">School</span>
-                <span class="nearby-card__distance">0.4 mi</span>
-              </div>
-              <span class="nearby-card__time"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> 8 min</span>
-            </div>
-            <div class="nearby-card">
-              <div class="nearby-card__icon" style="background:#fef3c7;color:#d97706">
-                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-              </div>
-              <div class="nearby-card__info">
-                <span class="nearby-card__name">Supermarket</span>
-                <span class="nearby-card__distance">0.7 mi</span>
-              </div>
-              <span class="nearby-card__time"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> 14 min</span>
-            </div>
-            <div class="nearby-card">
-              <div class="nearby-card__icon" style="background:#dcfce7;color:#16a34a">
-                <i class="fa-solid fa-bus" aria-hidden="true"></i>
-              </div>
-              <div class="nearby-card__info">
-                <span class="nearby-card__name">Bus Stop</span>
-                <span class="nearby-card__distance">0.2 mi</span>
-              </div>
-              <span class="nearby-card__time"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> 4 min</span>
-            </div>
-            <div class="nearby-card">
-              <div class="nearby-card__icon" style="background:#ede9fe;color:#7c3aed">
-                <i class="fa-solid fa-train" aria-hidden="true"></i>
-              </div>
-              <div class="nearby-card__info">
-                <span class="nearby-card__name">Train Station</span>
-                <span class="nearby-card__distance">1.8 mi</span>
-              </div>
-              <span class="nearby-card__time"><i class="fa-solid fa-car" aria-hidden="true"></i> 5 min</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Price History -->
-        <section aria-labelledby="price-history-heading" style="margin-bottom:var(--space-6)">
-          <h2 id="price-history-heading" style="font-size:var(--text-xl);margin-bottom:var(--space-4)">Price History</h2>
-          <table class="price-table" aria-label="Price history">
-            <thead>
-              <tr><th>Date</th><th>Event</th><th>Price</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>01 Jun 2026</td><td>Listed</td><td><strong>$285,000</strong></td></tr>
-              <tr><td>14 Apr 2026</td><td>Price reduced</td><td>$295,000</td></tr>
-              <tr><td>01 Mar 2026</td><td>Initially listed</td><td>$310,000</td></tr>
-            </tbody>
-          </table>
-        </section>
-      </div>
-
-      <!-- RIGHT COLUMN — Contact Card + Map -->
-      <aside aria-label="Contact lister and location">
-        <div class="contact-card">
-          <div class="contact-card__lister">
-            <img src="https://picsum.photos/seed/avatar1/100/100" alt="James Holt" class="contact-card__avatar" width="52" height="52">
+        <!-- Location map -->
+        <div class="room-map">
+          <div class="room-map__header">
             <div>
-              <p class="contact-card__name">James Holt</p>
-              <p class="contact-card__type"><span class="badge badge--owner" style="font-size:10px">Owner</span></p>
+              <h2 class="room-map__heading">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                Midtown, Oklahoma City
+              </h2>
+              <p class="room-map__address">NW 23rd Street area · Oklahoma City, OK 73103</p>
             </div>
+            <a href="https://www.openstreetmap.org/?mlat=35.4893&mlon=-97.5122#map=15/35.4893/-97.5122"
+               class="room-map__link" target="_blank" rel="noopener noreferrer"
+               aria-label="View location on OpenStreetMap (opens in new tab)">
+              View on map <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
           </div>
-
-          <div class="contact-card__actions">
-            <button class="btn btn--accent btn--lg" style="width:100%" data-modal-open="inquiry-modal">
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i> Send Inquiry
-            </button>
-            <button class="btn btn--primary" style="width:100%" onclick="showToast('Viewing request sent!','success')">
-              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Request Viewing
-            </button>
-            <button class="btn btn--outline" style="width:100%" id="reveal-phone-btn">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i> <span id="phone-text">Reveal Phone</span>
-            </button>
-          </div>
-
-          <div class="contact-card__secondary">
-            <button class="btn btn--ghost" id="fav-detail-btn" aria-label="Save to favourites">
-              <i class="fa-regular fa-heart" aria-hidden="true"></i> Save
-            </button>
-            <button class="btn btn--ghost" onclick="navigator.share ? navigator.share({title:document.title,url:location.href}) : showToast('Link copied!','info')" aria-label="Share property">
-              <i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Share
-            </button>
-            <button class="btn btn--ghost" data-modal-open="report-modal" aria-label="Report this listing">
-              <i class="fa-solid fa-flag" aria-hidden="true"></i> Report
-            </button>
+          <div class="room-map__frame">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-97.5322%2C35.4793%2C-97.4922%2C35.4993&layer=mapnik&marker=35.4893%2C-97.5122"
+              title="Map showing room location in Midtown, Oklahoma City"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
-        <!-- Map card -->
-        <div class="map-card">
-          <div class="map-card__header">
-            <div><i class="fa-solid fa-location-dot" style="color:var(--color-primary);margin-right:6px" aria-hidden="true"></i>Location</div>
-            <span>42 Maple Close, Greenwood Heights</span>
-          </div>
-          <iframe
-            id="property-map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.4!2d-0.0892!3d51.6012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDM2JzA0LjMiTiAwwrAwNSczNS4xIlc!5e0!3m2!1sen!2suk!4v1700000000000"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Property location on Google Maps"
-            style="border:0;width:100%;height:240px;display:block;">
-          </iframe>
+      </div>
+
+      <!-- RIGHT: Contact sidebar -->
+      <aside aria-label="Contact the agency">
+        <div class="contact-simple card">
+          <h2 class="contact-simple__title">Interested in this room?</h2>
+          <p class="contact-simple__agency">
+            <i class="fa-solid fa-house" aria-hidden="true"></i> Rooms OKC Agency
+          </p>
+          <a href="tel:+14055551234" class="contact-simple__row">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span>+1 (405) 555-1234</span>
+          </a>
+          <a href="mailto:hello@roomsokc.com" class="contact-simple__row">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>hello@roomsokc.com</span>
+          </a>
+          <a href="tel:+14055551234" class="btn btn--primary btn--lg" style="width:100%">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now
+          </a>
+          <a href="mailto:hello@roomsokc.com" class="btn btn--outline" style="width:100%">
+            Send an Email
+          </a>
         </div>
       </aside>
+
     </div>
 
-    <!-- Similar Listings -->
-    <section aria-labelledby="similar-heading" style="margin-top:var(--space-8)">
-      <h2 id="similar-heading" class="section-title" style="margin-bottom:var(--space-5)">Similar Properties</h2>
-      <div class="listing-grid">
-        <article class="card-listing" onclick="window.location='listing-detail.html'">
-          <div class="card-listing__img-wrap">
-            <img src="https://picsum.photos/seed/prop7/800/600" alt="Contemporary Semi-Detached House" class="card-listing__img" loading="lazy" width="800" height="600">
-            <div class="card-listing__badges"><span class="badge badge--sale">For Sale</span></div>
-            <span class="card-listing__lister card-listing__lister--owner"><i class="fa-solid fa-user" aria-hidden="true"></i>Owner</span>
-            <button class="card-listing__fav" aria-label="Save to favourites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-          </div>
-          <div class="card-listing__body">
-            <div class="card-listing__price">$420,000</div>
-            <h3 class="card-listing__title">Contemporary Semi-Detached House</h3>
-            <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Elmwood Park</p>
-            <div class="card-listing__meta">
-              <span class="card-listing__meta-item"><i class="fa-solid fa-bed" aria-hidden="true"></i><span><strong>4</strong> beds</span></span>
-              <span class="card-listing__meta-item"><i class="fa-solid fa-bath" aria-hidden="true"></i><span><strong>3</strong> baths</span></span>
-              <span class="card-listing__meta-item"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i><span><strong>1,650</strong> sq ft</span></span>
-            </div>
-          </div>
-        </article>
-        <article class="card-listing" onclick="window.location='listing-detail.html'">
-          <div class="card-listing__img-wrap">
-            <img src="https://picsum.photos/seed/prop11/800/600" alt="First-Time Buyer Starter Home" class="card-listing__img" loading="lazy" width="800" height="600">
-            <div class="card-listing__badges"><span class="badge badge--sale">For Sale</span></div>
-            <span class="card-listing__lister card-listing__lister--agent"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Agent</span>
-            <button class="card-listing__fav" aria-label="Save to favourites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-          </div>
-          <div class="card-listing__body">
-            <div class="card-listing__price">$195,000</div>
-            <h3 class="card-listing__title">First-Time Buyer Starter Home</h3>
-            <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Willowbrook</p>
-            <div class="card-listing__meta">
-              <span class="card-listing__meta-item"><i class="fa-solid fa-bed" aria-hidden="true"></i><span><strong>2</strong> beds</span></span>
-              <span class="card-listing__meta-item"><i class="fa-solid fa-bath" aria-hidden="true"></i><span><strong>1</strong> bath</span></span>
-              <span class="card-listing__meta-item"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i><span><strong>880</strong> sq ft</span></span>
-            </div>
-          </div>
-        </article>
-        <article class="card-listing" onclick="window.location='listing-detail.html'">
-          <div class="card-listing__img-wrap">
-            <img src="https://picsum.photos/seed/prop13/800/600" alt="Victorian Terrace with Garden" class="card-listing__img" loading="lazy" width="800" height="600">
-            <div class="card-listing__badges"><span class="badge badge--sale">For Sale</span></div>
-            <span class="card-listing__lister card-listing__lister--owner"><i class="fa-solid fa-user" aria-hidden="true"></i>Owner</span>
-            <button class="card-listing__fav" aria-label="Save to favourites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-          </div>
-          <div class="card-listing__body">
-            <div class="card-listing__price">$380,000</div>
-            <h3 class="card-listing__title">Victorian Terrace with Garden</h3>
-            <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Heritage Lane</p>
-            <div class="card-listing__meta">
-              <span class="card-listing__meta-item"><i class="fa-solid fa-bed" aria-hidden="true"></i><span><strong>3</strong> beds</span></span>
-              <span class="card-listing__meta-item"><i class="fa-solid fa-bath" aria-hidden="true"></i><span><strong>2</strong> baths</span></span>
-              <span class="card-listing__meta-item"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i><span><strong>1,320</strong> sq ft</span></span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
   </div>
 </main>
 
-<!-- INQUIRY MODAL -->
-<div class="modal-backdrop" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="inquiry-title" aria-hidden="true">
-  <div class="modal">
-    <div class="modal__header">
-      <h2 class="modal__title" id="inquiry-title">Send Inquiry</h2>
-      <button class="modal__close" data-modal-close="inquiry-modal" aria-label="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-    </div>
-    <div class="modal__body">
-      <p class="text-muted text-sm" style="margin-bottom:var(--space-4)">Inquiring about: <strong>Modern 3-Bed Family Home, Greenwood Heights</strong></p>
-      <div class="field">
-        <label class="field__label field__label--required" for="inq-name">Your Name</label>
-        <input type="text" id="inq-name" class="input" placeholder="Jane Smith" autocomplete="name">
-      </div>
-      <div class="field">
-        <label class="field__label field__label--required" for="inq-email">Email Address</label>
-        <input type="email" id="inq-email" class="input" placeholder="jane@example.com" autocomplete="email">
-      </div>
-      <div class="field">
-        <label class="field__label" for="inq-phone">Phone (optional)</label>
-        <input type="tel" id="inq-phone" class="input" placeholder="+1 555 000 0000" autocomplete="tel">
-      </div>
-      <div class="field" style="margin-bottom:0">
-        <label class="field__label field__label--required" for="inq-msg">Message</label>
-        <textarea id="inq-msg" class="textarea" rows="4" placeholder="I'm interested in this property and would like to arrange a viewing…"></textarea>
-      </div>
-    </div>
-    <div class="modal__footer">
-      <button class="btn btn--ghost" data-modal-close="inquiry-modal">Cancel</button>
-      <button class="btn btn--accent" id="inq-submit">Send Inquiry</button>
-    </div>
-  </div>
-</div>
+<!-- SIMILAR ROOMS — full-width band -->
+<section class="similar-rooms" aria-labelledby="similar-heading">
+  <div class="container">
 
-<!-- REPORT MODAL -->
-<div class="modal-backdrop" id="report-modal" role="dialog" aria-modal="true" aria-labelledby="report-title" aria-hidden="true">
-  <div class="modal">
-    <div class="modal__header">
-      <h2 class="modal__title" id="report-title"><i class="fa-solid fa-flag" aria-hidden="true"></i> Report Listing</h2>
-      <button class="modal__close" data-modal-close="report-modal" aria-label="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-    </div>
-    <div class="modal__body">
-      <p class="text-muted text-sm" style="margin-bottom:var(--space-4)">Please select the reason for reporting this listing. Our team will review it promptly.</p>
-      <div class="field" style="margin-bottom:0">
-        <label class="filter-group__label" for="report-reason">Reason</label>
-        <select id="report-reason" class="select">
-          <option>Inaccurate information</option>
-          <option>Suspected scam or fraud</option>
-          <option>Already rented / sold</option>
-          <option>Inappropriate content</option>
-          <option>Other</option>
-        </select>
+    <div class="similar-rooms__header">
+      <div>
+        <p class="similar-rooms__eyebrow">You might also like</p>
+        <h2 id="similar-heading" class="similar-rooms__title">Similar Rooms</h2>
       </div>
+      <a href="index.html" class="btn btn--outline btn--sm">
+        View All <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
     </div>
-    <div class="modal__footer">
-      <button class="btn btn--ghost" data-modal-close="report-modal">Cancel</button>
-      <button class="btn btn--primary" onclick="closeModal('report-modal');showToast('Report submitted. Thank you.','success')">Submit Report</button>
-    </div>
-  </div>
-</div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" aria-modal="true" aria-label="Photo lightbox" role="dialog">
-  <img src="" alt="Property photo" class="lightbox__img" id="lightbox-img">
-  <button class="lightbox__close" id="lb-close" aria-label="Close lightbox"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-  <button class="lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
-  <button class="lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Next photo"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
-</div>
+    <div class="listing-grid">
+
+      <article class="card-listing" role="link" tabindex="0"
+               onclick="window.location='listing-detail.html'"
+               onkeydown="if(event.key==='Enter')window.location='listing-detail.html'">
+        <div class="card-listing__img-wrap">
+          <img src="https://picsum.photos/seed/room2/800/600" alt="Studio in Paseo Arts District"
+               class="card-listing__img" loading="lazy" width="800" height="600">
+        </div>
+        <div class="card-listing__body">
+          <div class="card-listing__price">$890<span class="card-listing__per">/mo</span></div>
+          <h3 class="card-listing__title">Studio in the Paseo</h3>
+          <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Paseo Arts District, OKC</p>
+        </div>
+      </article>
+
+      <article class="card-listing" role="link" tabindex="0"
+               onclick="window.location='listing-detail.html'"
+               onkeydown="if(event.key==='Enter')window.location='listing-detail.html'">
+        <div class="card-listing__img-wrap">
+          <img src="https://picsum.photos/seed/room4/800/600" alt="Private Room in Bricktown"
+               class="card-listing__img" loading="lazy" width="800" height="600">
+        </div>
+        <div class="card-listing__body">
+          <div class="card-listing__price">$820<span class="card-listing__per">/mo</span></div>
+          <h3 class="card-listing__title">Private Room – Bricktown</h3>
+          <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Bricktown, OKC</p>
+        </div>
+      </article>
+
+      <article class="card-listing" role="link" tabindex="0"
+               onclick="window.location='listing-detail.html'"
+               onkeydown="if(event.key==='Enter')window.location='listing-detail.html'">
+        <div class="card-listing__img-wrap">
+          <img src="https://picsum.photos/seed/room7/800/600" alt="Private Room in Plaza District"
+               class="card-listing__img" loading="lazy" width="800" height="600">
+        </div>
+        <div class="card-listing__body">
+          <div class="card-listing__price">$700<span class="card-listing__per">/mo</span></div>
+          <h3 class="card-listing__title">Private Room – Plaza District</h3>
+          <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Plaza District, OKC</p>
+        </div>
+      </article>
+
+      <article class="card-listing" role="link" tabindex="0"
+               onclick="window.location='listing-detail.html'"
+               onkeydown="if(event.key==='Enter')window.location='listing-detail.html'">
+        <div class="card-listing__img-wrap">
+          <img src="https://picsum.photos/seed/room5/800/600" alt="Studio Apartment in Automobile Alley"
+               class="card-listing__img" loading="lazy" width="800" height="600">
+        </div>
+        <div class="card-listing__body">
+          <div class="card-listing__price">$950<span class="card-listing__per">/mo</span></div>
+          <h3 class="card-listing__title">Studio Apartment</h3>
+          <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Automobile Alley, OKC</p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Rooms <span style="color:var(--color-primary)">OKC</span></span></a>
-        <p>Your trusted marketplace for buying, renting, and discovering the perfect home.</p>
-        <div class="footer__social"><a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a><a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></div>
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Rooms <span style="color:var(--color-primary)">OKC</span></span>
+        </a>
+        <p>Oklahoma City's room rental agency. Simple listings, real rooms.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
       </div>
-      <div><p class="footer__col-title">Browse</p><nav class="footer__links"><a href="listings.html?type=sale">For Sale</a><a href="listings.html?type=rent">For Rent</a><a href="listings.html?type=shared">Shared</a></nav></div>
-      <div><p class="footer__col-title">Tools</p><nav class="footer__links"><a href="calculator.html">Calculator</a><a href="post-listing.html">List Property</a></nav></div>
-      <div><p class="footer__col-title">Company</p><nav class="footer__links"><a href="#">About</a><a href="#">Privacy</a><a href="#">Terms</a></nav></div>
+      <div>
+        <p class="footer__col-title">Room Types</p>
+        <nav class="footer__links" aria-label="Browse by type">
+          <a href="index.html">Private Rooms</a>
+          <a href="index.html">Studios</a>
+          <a href="index.html">Shared Rooms</a>
+          <a href="index.html">All Rooms</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Budget</p>
+        <nav class="footer__links" aria-label="Browse by budget">
+          <a href="index.html">Under $500/mo</a>
+          <a href="index.html">$500 – $800/mo</a>
+          <a href="index.html">$800 – $1,200/mo</a>
+          <a href="index.html">Any budget</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="contact.html">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
     </div>
-    <div class="footer__bottom"><p>&copy; 2026 Rooms OKC.</p></div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 
 <script src="js/app.js"></script>
 <script>
-  // Gallery & lightbox
-  const thumbs = document.querySelectorAll('.gallery__thumb');
-  const mainImg = document.getElementById('main-img');
-  const counter = document.getElementById('gallery-counter');
-  const imgSrcs = [
-    'https://picsum.photos/seed/prop1/1200/800',
-    'https://picsum.photos/seed/prop1a/1200/800',
-    'https://picsum.photos/seed/prop1b/1200/800',
-    'https://picsum.photos/seed/prop1c/1200/800',
+  var imgSrcs = [
+    'https://picsum.photos/seed/room1/1200/800',
+    'https://picsum.photos/seed/room1a/1200/800',
+    'https://picsum.photos/seed/room1b/1200/800',
+    'https://picsum.photos/seed/room1c/1200/800',
   ];
-  let currentImg = 0;
+  var currentImg = 0;
+  var mainImg = document.getElementById('main-img');
+  var counter = document.getElementById('gallery-counter');
 
-  thumbs.forEach((t, i) => {
-    t.addEventListener('click', () => setImg(i));
-    t.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') setImg(i); });
-  });
+  var thumbs = document.querySelectorAll('#gallery-thumbs .gallery__thumb');
 
   function setImg(i) {
-    currentImg = i;
-    mainImg.src = imgSrcs[i];
-    thumbs.forEach((t,j) => t.classList.toggle('is-active', j===i));
-    counter.textContent = (i + 1) + ' / ' + imgSrcs.length;
+    currentImg = (i + imgSrcs.length) % imgSrcs.length;
+    mainImg.src = imgSrcs[currentImg];
+    mainImg.alt = 'Room photo ' + (currentImg + 1) + ' of ' + imgSrcs.length;
+    counter.textContent = (currentImg + 1) + ' / ' + imgSrcs.length;
+    thumbs.forEach(function(t, idx) { t.classList.toggle('is-active', idx === currentImg); });
   }
 
-  function prevImg() { setImg((currentImg - 1 + imgSrcs.length) % imgSrcs.length); }
-  function nextImg() { setImg((currentImg + 1) % imgSrcs.length); }
+  document.getElementById('gallery-prev').addEventListener('click', function(e) { e.stopPropagation(); setImg(currentImg - 1); });
+  document.getElementById('gallery-next').addEventListener('click', function(e) { e.stopPropagation(); setImg(currentImg + 1); });
 
-  // Arrow buttons
-  document.getElementById('gallery-prev').addEventListener('click', e => { e.stopPropagation(); prevImg(); });
-  document.getElementById('gallery-next').addEventListener('click', e => { e.stopPropagation(); nextImg(); });
-
-  // Touch swipe on main image
+  // Touch swipe
   (function() {
-    const wrap = document.getElementById('main-img-wrap');
-    let startX = 0, startY = 0, tracking = false;
-    wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY; tracking = true; }, { passive: true });
-    wrap.addEventListener('touchmove', e => { /* allow default scroll if vertical */ }, { passive: true });
-    wrap.addEventListener('touchend', e => {
-      if (!tracking) return;
-      tracking = false;
-      const dx = e.changedTouches[0].clientX - startX;
-      const dy = e.changedTouches[0].clientY - startY;
-      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-        dx < 0 ? nextImg() : prevImg();
-      }
+    var wrap = document.getElementById('main-img-wrap'), startX = 0, startY = 0;
+    wrap.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; startY = e.touches[0].clientY; }, { passive: true });
+    wrap.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) setImg(currentImg + (dx < 0 ? 1 : -1));
     });
   })();
 
-  // Keyboard arrows when gallery is in view (non-lightbox)
-  document.addEventListener('keydown', e => {
-    if (document.getElementById('lightbox').classList.contains('is-open')) return;
-    if (e.key === 'ArrowLeft')  prevImg();
-    if (e.key === 'ArrowRight') nextImg();
-  });
-
-  // Click main image to open lightbox
-  document.getElementById('main-img-wrap').addEventListener('click', e => {
-    if (e.target.closest('.gallery__nav')) return; // don't open lightbox when clicking arrows
-    const lb = document.getElementById('lightbox');
-    document.getElementById('lightbox-img').src = imgSrcs[currentImg];
-    lb.classList.add('is-open');
-  });
-
-  document.getElementById('lb-close').addEventListener('click', () => document.getElementById('lightbox').classList.remove('is-open'));
-  document.getElementById('lb-prev').addEventListener('click', () => { prevImg(); document.getElementById('lightbox-img').src=imgSrcs[currentImg]; });
-  document.getElementById('lb-next').addEventListener('click', () => { nextImg(); document.getElementById('lightbox-img').src=imgSrcs[currentImg]; });
-
-  document.addEventListener('keydown', e => {
-    if(!document.getElementById('lightbox').classList.contains('is-open')) return;
-    if(e.key==='Escape') document.getElementById('lightbox').classList.remove('is-open');
-    if(e.key==='ArrowLeft')  { prevImg(); document.getElementById('lightbox-img').src=imgSrcs[currentImg]; }
-    if(e.key==='ArrowRight') { nextImg(); document.getElementById('lightbox-img').src=imgSrcs[currentImg]; }
-  });
-
-  // Phone reveal
-  document.getElementById('reveal-phone-btn').addEventListener('click', () => {
-    document.getElementById('phone-text').textContent = '+1 (555) 234-5678';
-    showToast('Phone number revealed', 'info');
-  });
-
-  // Fav button on detail page
-  const favBtn = document.getElementById('fav-detail-btn');
-  favBtn.addEventListener('click', () => {
-    const saved = favBtn.classList.toggle('is-saved');
-    favBtn.innerHTML = saved
-      ? '<i class="fa-solid fa-heart" style="color:#e11d48"></i> Saved'
-      : '<i class="fa-regular fa-heart"></i> Save';
-    showToast(saved ? 'Added to favourites' : 'Removed from favourites', 'success');
-  });
-
-  // Inquiry submit
-  document.getElementById('inq-submit').addEventListener('click', () => {
-    const name  = document.getElementById('inq-name').value.trim();
-    const email = document.getElementById('inq-email').value.trim();
-    const msg   = document.getElementById('inq-msg').value.trim();
-    if (!name || !email || !msg) { showToast('Please fill in all required fields.','error'); return; }
-    closeModal('inquiry-modal');
-    showToast('Inquiry sent! James will get back to you shortly.', 'success');
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft')  setImg(currentImg - 1);
+    if (e.key === 'ArrowRight') setImg(currentImg + 1);
   });
 </script>
 </body>

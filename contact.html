@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Rooms OKC</title>
+  <meta name="description" content="Get in touch with Rooms OKC — Oklahoma City's local room rental agency.">
+  <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s||'light');})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="Rooms OKC Home">
+      <i class="fa-solid fa-house" aria-hidden="true"></i>
+      <span class="navbar__logo-word">Rooms<span>OKC</span></span>
+    </a>
+    <div class="navbar__actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <a href="contact.html" class="btn btn--primary btn--sm is-active" aria-current="page">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us
+      </a>
+      <button class="nav-hamburger" aria-label="Open navigation menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-drawer__panel">
+    <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
+    <a href="contact.html" class="nav-drawer__link is-active" aria-current="page">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us
+    </a>
+    <hr class="divider">
+    <button class="theme-toggle btn btn--ghost" style="width:100%;justify-content:flex-start;gap:var(--space-3)">
+      <i class="fa-solid fa-moon" aria-hidden="true"></i> Toggle Dark Mode
+    </button>
+  </div>
+</div>
+
+<main class="page-top">
+
+  <!-- HERO -->
+  <section class="listings-hero">
+    <div class="container">
+      <div class="listings-hero__inner">
+        <div class="listings-hero__text">
+          <p class="listings-hero__eyebrow">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            We'd love to hear from you
+          </p>
+          <h1 class="listings-hero__title">Contact Us</h1>
+          <p class="listings-hero__sub">Questions about a listing, scheduling a viewing, or just want to say hello — we're here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT LAYOUT -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- FORM -->
+        <div class="card contact-form-card">
+          <h2 class="contact-form-card__title">Send us a message</h2>
+          <p class="contact-form-card__sub">We typically reply within one business day.</p>
+          <form id="contact-form" novalidate>
+            <div class="field">
+              <label class="field__label field__label--required" for="cf-name">Your Name</label>
+              <input class="input" id="cf-name" name="name" type="text" placeholder="Jane Smith" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label class="field__label field__label--required" for="cf-email">Email Address</label>
+              <input class="input" id="cf-email" name="email" type="email" placeholder="jane@example.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label class="field__label" for="cf-phone">
+                Phone Number <span class="field__helper" style="display:inline;font-style:italic">(optional)</span>
+              </label>
+              <input class="input" id="cf-phone" name="phone" type="tel" placeholder="+1 (405) 000-0000" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label class="field__label field__label--required" for="cf-message">Message</label>
+              <textarea class="textarea" id="cf-message" name="message" rows="5"
+                placeholder="Tell us about the room you're looking for, or ask us anything…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" style="width:100%">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <aside aria-label="Contact information">
+          <div class="card contact-info-card">
+            <h2 class="contact-info-card__title">Get in touch directly</h2>
+            <div class="contact-info-card__item">
+              <i class="fa-solid fa-phone contact-info-card__icon" aria-hidden="true"></i>
+              <div>
+                <p class="contact-info-card__label">Phone</p>
+                <p class="contact-info-card__value">
+                  <a href="tel:+14055551234">+1 (405) 555-1234</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-info-card__item">
+              <i class="fa-solid fa-envelope contact-info-card__icon" aria-hidden="true"></i>
+              <div>
+                <p class="contact-info-card__label">Email</p>
+                <p class="contact-info-card__value">
+                  <a href="mailto:hello@roomsokc.com">hello@roomsokc.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-info-card__item">
+              <i class="fa-solid fa-location-dot contact-info-card__icon" aria-hidden="true"></i>
+              <div>
+                <p class="contact-info-card__label">Office</p>
+                <p class="contact-info-card__value">
+                  123 NW 23rd Street<br>Oklahoma City, OK 73103
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="font-size:var(--text-xl)">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Rooms <span style="color:var(--color-primary)">OKC</span></span>
+        </a>
+        <p>Oklahoma City's room rental agency. Simple listings, real rooms.</p>
+        <div class="footer__social" aria-label="Social media links">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Room Types</p>
+        <nav class="footer__links" aria-label="Browse by type">
+          <a href="index.html">Private Rooms</a>
+          <a href="index.html">Studios</a>
+          <a href="index.html">Shared Rooms</a>
+          <a href="index.html">All Rooms</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Budget</p>
+        <nav class="footer__links" aria-label="Browse by budget">
+          <a href="index.html">Under $500/mo</a>
+          <a href="index.html">$500 – $800/mo</a>
+          <a href="index.html">$800 – $1,200/mo</a>
+          <a href="index.html">Any budget</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="contact.html">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value.trim();
+    var email = document.getElementById('cf-email').value.trim();
+    var message = document.getElementById('cf-message').value.trim();
+
+    if (!name || !email || !message) {
+      showToast('Please fill in all required fields.', 'warning');
+      return;
+    }
+
+    this.reset();
+    showToast('Message sent! We\'ll get back to you within one business day.', 'success', 5000);
+  });
+</script>
+</body>
+</html>

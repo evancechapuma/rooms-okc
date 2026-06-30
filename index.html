@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rooms OKC — Find Your Perfect Home</title>
-  <meta name="description" content="Browse homes for sale, rent, shared rooms, and short-term stays. Rooms OKC connects you with your perfect property.">
+  <title>Rooms OKC — Available Rooms in Oklahoma City</title>
+  <meta name="description" content="Browse available rooms for rent in Oklahoma City. Private rooms, studios, and shared spaces listed by Rooms OKC.">
   <script>
-    (function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();
+    (function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s||'light');})();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,20 +27,11 @@
       <i class="fa-solid fa-house" aria-hidden="true"></i>
       <span class="navbar__logo-word">Rooms<span>OKC</span></span>
     </a>
-    <nav class="navbar__links" aria-label="Main navigation">
-      <a href="listings.html?type=sale"   class="navbar__link">Buy</a>
-      <a href="listings.html?type=rent"   class="navbar__link">Rent</a>
-      <a href="listings.html?type=shared" class="navbar__link">Shared</a>
-      <a href="listings.html?type=short"  class="navbar__link">Short-Term</a>
-      <a href="find-agent.html" class="navbar__link">Agents</a>
-    </nav>
     <div class="navbar__actions">
       <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
-      <a href="post-listing.html" class="btn btn--accent btn--sm"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
-      <div class="flex gap-2">
-        <a href="login.html"  class="btn btn--ghost btn--sm">Log in</a>
-        <a href="signup.html" class="btn btn--primary btn--sm">Sign up</a>
-      </div>
+      <a href="contact.html" class="btn btn--primary btn--sm">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us
+      </a>
       <button class="nav-hamburger" aria-label="Open navigation menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </div>
@@ -50,224 +41,81 @@
 <div class="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="nav-drawer__panel">
     <button class="nav-drawer__close" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
-    <a href="listings.html?type=sale"   class="nav-drawer__link"><i class="fa-solid fa-building" aria-hidden="true"></i> Buy</a>
-    <a href="listings.html?type=rent"   class="nav-drawer__link"><i class="fa-solid fa-key" aria-hidden="true"></i> Rent</a>
-    <a href="listings.html?type=shared" class="nav-drawer__link"><i class="fa-solid fa-people-roof" aria-hidden="true"></i> Shared</a>
-    <a href="listings.html?type=short"  class="nav-drawer__link"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Short-Term</a>
+    <a href="contact.html" class="nav-drawer__link">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us
+    </a>
     <hr class="divider">
-    <a href="post-listing.html" class="btn btn--accent" style="width:100%"><i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing</a>
-    <a href="login.html"  class="btn btn--outline" style="width:100%;margin-top:0.5rem">Log in</a>
-    <a href="signup.html" class="btn btn--ghost"   style="width:100%;margin-top:0.5rem">Sign up</a>
+    <button class="theme-toggle btn btn--ghost" style="width:100%;justify-content:flex-start;gap:var(--space-3)">
+      <i class="fa-solid fa-moon" aria-hidden="true"></i> Toggle Dark Mode
+    </button>
   </div>
 </div>
 
-<main>
-  <!-- HERO -->
-  <section class="hero" aria-label="Search for properties">
-    <div class="hero__bg" role="img" aria-label="Modern house exterior"></div>
-    <div class="hero__overlay" aria-hidden="true"></div>
-    <div class="hero__content container">
-      <div class="hero__eyebrow animate-fade-up">
-        <i class="fa-solid fa-fire" aria-hidden="true"></i>
-        Over 24,000 active listings nationwide
+<main class="page-top">
+
+  <!-- LISTINGS HEADER -->
+  <section class="listings-hero">
+    <div class="container">
+      <div class="listings-hero__inner">
+        <div class="listings-hero__text">
+          <p class="listings-hero__eyebrow">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Oklahoma City, OK
+          </p>
+          <h1 class="listings-hero__title">Available Rooms</h1>
+          <p class="listings-hero__sub">All listings verified and managed by Rooms OKC</p>
+        </div>
+        <span class="listings-hero__pill" id="listing-count">12 rooms</span>
       </div>
-      <h1 class="hero__title animate-fade-up delay-1">
-        Find Your <em>Perfect Home</em><br>With Confidence
-      </h1>
-      <p class="hero__sub animate-fade-up delay-2">
-        Search through thousands of verified listings for sale, rent, shared rooms, and short-term stays.
-      </p>
-      <div class="hero__search animate-fade-up delay-3" role="search">
-        <i class="fa-solid fa-magnifying-glass" style="color:var(--color-text-faint);padding-left:1rem;display:none" aria-hidden="true"></i>
-        <input
-          type="search"
-          class="hero__search-input"
-          placeholder="Enter a city, neighbourhood, or postal code…"
-          aria-label="Search location"
-          id="hero-search"
-        >
-        <select class="hero__search-select input" aria-label="Listing category" id="hero-category">
-          <option value="">All Categories</option>
-          <option value="sale">Buy</option>
-          <option value="rent">Rent</option>
-          <option value="shared">Shared / Room</option>
-          <option value="short">Short-Term</option>
+    </div>
+  </section>
+
+  <!-- LISTINGS MAIN -->
+  <section class="listings-main">
+    <div class="container">
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar" aria-label="Filter and sort listings">
+        <select class="filter-bar__select" id="filter-price" aria-label="Filter by price">
+          <option value="">Any price</option>
+          <option value="500">Under $500/mo</option>
+          <option value="800">$500 – $800/mo</option>
+          <option value="1200">$800 – $1,200/mo</option>
+          <option value="1201">$1,200+/mo</option>
         </select>
-        <a href="listings.html" class="btn btn--accent btn--lg" id="hero-search-btn" style="border-radius:var(--radius-lg)">
-          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Search
-        </a>
+        <select class="filter-bar__select" id="filter-type" aria-label="Filter by room type">
+          <option value="">Any type</option>
+          <option value="private">Private Room</option>
+          <option value="studio">Studio</option>
+          <option value="shared">Shared Room</option>
+        </select>
+        <select class="filter-bar__select" id="filter-sort" aria-label="Sort listings">
+          <option value="newest">Newest first</option>
+          <option value="price-asc">Price: Low – High</option>
+          <option value="price-desc">Price: High – Low</option>
+        </select>
       </div>
-    </div>
-  </section>
 
-  <!-- CATEGORIES -->
-  <section class="section" aria-labelledby="categories-heading">
-    <div class="container">
-      <h2 class="section-title" id="categories-heading">Browse by Category</h2>
-      <p class="section-subtitle">Whatever you're looking for, we've got you covered.</p>
-      <div class="category-grid">
+      <!-- ACTIVE FILTER CHIPS -->
+      <div class="filter-chips" id="filter-chips" aria-label="Active filters" aria-live="polite"></div>
 
-        <a href="listings.html?type=sale" class="category-card animate-fade-up">
-          <div class="category-card__illus" style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%)">
-            <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="30" y="38" width="55" height="42" rx="4" fill="#bfdbfe"/>
-              <path d="M25 42 57.5 18 90 42" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="48" y="58" width="14" height="22" rx="2" fill="#2563eb"/>
-              <circle cx="58" cy="70" r="1.5" fill="#fff"/>
-              <rect x="35" y="48" width="10" height="10" rx="2" fill="#60a5fa"/>
-              <rect x="70" y="48" width="10" height="10" rx="2" fill="#60a5fa"/>
-              <rect x="14" y="56" width="8" height="24" rx="2" fill="#f97316"/>
-              <text x="15.5" y="66" font-size="5" font-weight="bold" fill="#fff" font-family="sans-serif">S</text>
-              <text x="14.8" y="72" font-size="5" font-weight="bold" fill="#fff" font-family="sans-serif">O</text>
-              <text x="15.5" y="78" font-size="5" font-weight="bold" fill="#fff" font-family="sans-serif">L</text>
-              <text x="14.8" y="84" font-size="5" font-weight="bold" fill="#fff" font-family="sans-serif">D</text>
-            </svg>
-          </div>
-          <div class="category-card__body">
-            <h3 class="category-card__title">Buy a home</h3>
-            <p class="category-card__desc">Browse homes for sale with detailed pricing, photos, and neighbourhood insights to find the right fit.</p>
-            <span class="category-card__cta">Find homes <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
+      <!-- GRID -->
+      <div class="listing-grid" id="home-listing-grid"></div>
 
-        <a href="listings.html?type=rent" class="category-card animate-fade-up delay-1">
-          <div class="category-card__illus" style="background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%)">
-            <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="20" y="30" width="35" height="50" rx="3" fill="#fbbf24"/>
-              <rect x="65" y="15" width="35" height="65" rx="3" fill="#f59e0b"/>
-              <rect x="25" y="38" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="37" y="38" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="25" y="52" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="37" y="52" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="70" y="24" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="83" y="24" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="70" y="38" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="83" y="38" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="70" y="52" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="83" y="52" width="8" height="8" rx="1.5" fill="#fff"/>
-              <rect x="30" y="66" width="10" height="14" rx="2" fill="#92400e"/>
-              <rect x="77" y="66" width="10" height="14" rx="2" fill="#92400e"/>
-              <circle cx="37" cy="73" r="1.2" fill="#fbbf24"/>
-              <circle cx="84" cy="73" r="1.2" fill="#fbbf24"/>
-            </svg>
-          </div>
-          <div class="category-card__body">
-            <h3 class="category-card__title">Rent a place</h3>
-            <p class="category-card__desc">Apartments, houses, and studios for rent — filter by budget, location, and move-in date.</p>
-            <span class="category-card__cta">Find rentals <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
-
-        <a href="listings.html?type=shared" class="category-card animate-fade-up delay-2">
-          <div class="category-card__illus" style="background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%)">
-            <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="42" cy="38" r="12" fill="#f9a8d4"/>
-              <circle cx="78" cy="38" r="12" fill="#ec4899"/>
-              <circle cx="42" cy="35" r="5" fill="#fff"/>
-              <circle cx="78" cy="35" r="5" fill="#fff"/>
-              <path d="M42 42c-3 0-5.5 1-7 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-              <path d="M78 42c-3 0-5.5 1-7 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-              <path d="M26 80c0-10 7-18 16-18s16 8 16 18" fill="#f9a8d4"/>
-              <path d="M62 80c0-10 7-18 16-18s16 8 16 18" fill="#ec4899"/>
-              <rect x="50" y="52" width="20" height="14" rx="3" fill="#fdf2f8" stroke="#ec4899" stroke-width="2"/>
-              <path d="M54 58h12M54 62h8" stroke="#ec4899" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="category-card__body">
-            <h3 class="category-card__title">Share a room</h3>
-            <p class="category-card__desc">Find a compatible flatmate or list a spare room — verified profiles and direct messaging.</p>
-            <span class="category-card__cta">Find rooms <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
-
-        <a href="listings.html?type=short" class="category-card animate-fade-up delay-3">
-          <div class="category-card__illus" style="background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%)">
-            <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="22" y="28" width="42" height="52" rx="5" fill="#c4b5fd" stroke="#7c3aed" stroke-width="3"/>
-              <path d="M22 40h42" stroke="#7c3aed" stroke-width="3"/>
-              <rect x="30" y="48" width="8" height="8" rx="2" fill="#7c3aed"/>
-              <rect x="42" y="48" width="8" height="8" rx="2" fill="#a78bfa"/>
-              <rect x="30" y="60" width="8" height="8" rx="2" fill="#a78bfa"/>
-              <rect x="42" y="60" width="8" height="8" rx="2" fill="#7c3aed"/>
-              <circle cx="43" cy="32" r="3" fill="#7c3aed"/>
-              <rect x="70" y="40" width="30" height="40" rx="4" fill="#8b5cf6"/>
-              <rect x="74" y="55" width="10" height="6" rx="1" fill="#ddd6fe"/>
-              <rect x="74" y="45" width="22" height="6" rx="1" fill="#ddd6fe"/>
-              <circle cx="92" cy="73" r="3" fill="#fff"/>
-              <path d="M72 44c0-4 3-7 7-7h12c4 0 7 3 7 7" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="category-card__body">
-            <h3 class="category-card__title">Stay short-term</h3>
-            <p class="category-card__desc">Book furnished stays by the night or week — perfect for travel, work trips, or temporary housing.</p>
-            <span class="category-card__cta">Find stays <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED LISTINGS -->
-  <section class="section" style="background:var(--color-surface-alt)" aria-labelledby="featured-heading">
-    <div class="container">
-      <div class="flex items-center justify-between" style="margin-bottom:var(--space-6)">
-        <div>
-          <h2 class="section-title" id="featured-heading">Featured Properties</h2>
-          <p class="text-muted">Hand-picked listings you'll love</p>
-        </div>
-        <a href="listings.html" class="btn btn--outline">View All <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-      <div class="listing-grid" id="featured-grid">
-        <!-- Cards generated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section" aria-labelledby="how-heading">
-    <div class="container">
-      <h2 class="section-title" id="how-heading" style="text-align:center">How It Works</h2>
-      <p class="section-subtitle" style="text-align:center">Three simple steps to your next home</p>
-      <div class="how-steps">
-        <div class="how-step animate-fade-up">
-          <div class="how-step__visual">
-            <div class="how-step__circle"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
-            <span class="how-step__num">1</span>
-          </div>
-          <h3 class="how-step__title">Search</h3>
-          <p class="how-step__text">Filter by location, price, type, and more to find listings that match your exact needs.</p>
-        </div>
-        <div class="how-step animate-fade-up delay-2">
-          <div class="how-step__visual">
-            <div class="how-step__circle"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
-            <span class="how-step__num">2</span>
-          </div>
-          <h3 class="how-step__title">Connect</h3>
-          <p class="how-step__text">Send an inquiry or request a viewing directly through the platform — no middlemen.</p>
-        </div>
-        <div class="how-step animate-fade-up delay-4">
-          <div class="how-step__visual">
-            <div class="how-step__circle"><i class="fa-solid fa-house-chimney-user" aria-hidden="true"></i></div>
-            <span class="how-step__num">3</span>
-          </div>
-          <h3 class="how-step__title">Move In</h3>
-          <p class="how-step__text">Agree on terms and make your move. Rooms OKC is with you every step of the way.</p>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- CTA BAND -->
   <section class="cta-band" aria-labelledby="cta-heading">
-    <div class="container">
-      <h2 id="cta-heading">Have a Property to List?</h2>
-      <p>Reach thousands of verified buyers and renters. Listing is free — always.</p>
-      <a href="post-listing.html" class="btn btn--accent btn--lg">
-        <i class="fa-solid fa-plus" aria-hidden="true"></i> Post a Listing Free
-      </a>
+    <div class="container cta-band__inner">
+      <div>
+        <h2 id="cta-heading">Can't find the right room?</h2>
+        <p>Tell us what you need — we'll find it for you.</p>
+      </div>
+      <a href="contact.html" class="btn btn--accent btn--lg">Contact the Agency</a>
     </div>
   </section>
+
 </main>
 
 <!-- FOOTER -->
@@ -279,38 +127,35 @@
           <i class="fa-solid fa-house" aria-hidden="true"></i>
           <span>Rooms <span style="color:var(--color-primary)">OKC</span></span>
         </a>
-        <p>Your trusted marketplace for buying, renting, and discovering the perfect home.</p>
+        <p>Oklahoma City's room rental agency. Simple listings, real rooms.</p>
         <div class="footer__social" aria-label="Social media links">
           <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
           <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
           <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
         </div>
       </div>
       <div>
-        <p class="footer__col-title">Browse</p>
-        <nav class="footer__links">
-          <a href="listings.html?type=sale">Homes for Sale</a>
-          <a href="listings.html?type=rent">Homes for Rent</a>
-          <a href="listings.html?type=shared">Shared / Rooms</a>
-          <a href="listings.html?type=short">Short-Term Stays</a>
-          <a href="calculator.html">Affordability Calculator</a>
+        <p class="footer__col-title">Room Types</p>
+        <nav class="footer__links" aria-label="Browse by type">
+          <a href="#" onclick="setFilter('filter-type','private');return false;">Private Rooms</a>
+          <a href="#" onclick="setFilter('filter-type','studio');return false;">Studios</a>
+          <a href="#" onclick="setFilter('filter-type','shared');return false;">Shared Rooms</a>
+          <a href="#" onclick="setFilter('filter-type','');return false;">All Rooms</a>
         </nav>
       </div>
       <div>
-        <p class="footer__col-title">For Listers</p>
-        <nav class="footer__links">
-          <a href="post-listing.html">Post a Listing</a>
-          <a href="dashboard.html">Dashboard</a>
-          <a href="my-listings.html">Manage Listings</a>
+        <p class="footer__col-title">Budget</p>
+        <nav class="footer__links" aria-label="Browse by budget">
+          <a href="#" onclick="setFilter('filter-price','500');return false;">Under $500/mo</a>
+          <a href="#" onclick="setFilter('filter-price','800');return false;">$500 – $800/mo</a>
+          <a href="#" onclick="setFilter('filter-price','1200');return false;">$800 – $1,200/mo</a>
+          <a href="#" onclick="setFilter('filter-price','');return false;">Any budget</a>
         </nav>
       </div>
       <div>
         <p class="footer__col-title">Company</p>
-        <nav class="footer__links">
-          <a href="#">About Us</a>
-          <a href="#">Blog</a>
-          <a href="#">Careers</a>
+        <nav class="footer__links" aria-label="Company links">
+          <a href="contact.html">Contact</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
         </nav>
@@ -318,70 +163,120 @@
     </div>
     <div class="footer__bottom">
       <p>&copy; 2026 Rooms OKC. All rights reserved.</p>
-      <p>Made with <i class="fa-solid fa-heart" style="color:var(--color-accent)" aria-hidden="true"></i> for home seekers</p>
     </div>
   </div>
 </footer>
 
 <script src="js/app.js"></script>
 <script>
-  // Hero search redirect
-  document.getElementById('hero-search-btn').addEventListener('click', function(e) {
-    const q = document.getElementById('hero-search').value.trim();
-    const cat = document.getElementById('hero-category').value;
-    let url = 'listings.html';
-    const params = new URLSearchParams();
-    if (q)   params.set('q', q);
-    if (cat) params.set('type', cat);
-    if (params.toString()) url += '?' + params.toString();
-    window.location.href = url;
-    e.preventDefault();
-  });
-
-  document.getElementById('hero-search').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') document.getElementById('hero-search-btn').click();
-  });
-
-  // Generate featured listing cards
-  const featuredData = [
-    { id:1,  price:'$285,000', label:'For Sale', type:'sale', title:'Modern 3-Bed Family Home', loc:'Greenwood Heights', beds:3, baths:2, area:'1,450', lister:'Owner' },
-    { id:2,  price:'$1,850/mo', label:'For Rent', type:'rent', title:'Bright City Centre Apartment', loc:'Downtown Core', beds:2, baths:1, area:'820', lister:'Agent' },
-    { id:3,  price:'$620/mo', label:'Shared', type:'shared', title:'Cosy Room in Shared House', loc:'Riverside Quarter', beds:1, baths:1, area:'220', lister:'Owner' },
-    { id:4,  price:'$95/night', label:'Short-Term', type:'short', title:'Stylish Studio with Balcony', loc:'Marina District', beds:1, baths:1, area:'480', lister:'Owner' },
-    { id:5,  price:'$540,000', label:'For Sale', type:'sale', title:'Spacious 5-Bed Villa with Pool', loc:'Oak Hill Estate', beds:5, baths:4, area:'3,200', lister:'Agent' },
-    { id:6,  price:'$1,200/mo', label:'For Rent', type:'rent', title:'2-Bed Townhouse Near Park', loc:'Northgate', beds:2, baths:2, area:'1,050', lister:'Agent' },
+  const rooms = [
+    { id: 1,  title: 'Private Room – Midtown',         loc: 'Midtown',              price: 750,  type: 'private', added: 6  },
+    { id: 2,  title: 'Studio in the Paseo',             loc: 'Paseo Arts District',  price: 890,  type: 'studio',  added: 5  },
+    { id: 3,  title: 'Shared Room – Deep Deuce',        loc: 'Deep Deuce',           price: 480,  type: 'shared',  added: 4  },
+    { id: 4,  title: 'Private Room – Bricktown',        loc: 'Bricktown',            price: 820,  type: 'private', added: 3  },
+    { id: 5,  title: 'Studio Apartment',                loc: 'Automobile Alley',     price: 950,  type: 'studio',  added: 7  },
+    { id: 6,  title: 'Shared Room – Classen',           loc: 'Classen',              price: 420,  type: 'shared',  added: 2  },
+    { id: 7,  title: 'Private Room – Plaza District',   loc: 'Plaza District',       price: 700,  type: 'private', added: 8  },
+    { id: 8,  title: 'Studio – Film Row',               loc: 'Film Row',             price: 1050, type: 'studio',  added: 1  },
+    { id: 9,  title: 'Shared Room – NW OKC',            loc: 'Northwest OKC',        price: 350,  type: 'shared',  added: 9  },
+    { id: 10, title: 'Private Room – Nichols Hills',    loc: 'Nichols Hills',        price: 950,  type: 'private', added: 10 },
+    { id: 11, title: 'Studio – Midtown',                loc: 'Midtown',              price: 1100, type: 'studio',  added: 11 },
+    { id: 12, title: 'Shared Room – Mesta Park',        loc: 'Mesta Park',           price: 460,  type: 'shared',  added: 12 },
   ];
 
-  const typeClass = { sale:'sale', rent:'rent', shared:'shared', short:'short' };
-  const listerMod  = { Owner:'owner', Agent:'agent' };
-  const listerIcon = { Owner:'fa-user', Agent:'fa-briefcase' };
+  function getFiltered() {
+    let list = [...rooms];
+    const price = document.getElementById('filter-price').value;
+    const type  = document.getElementById('filter-type').value;
+    const sort  = document.getElementById('filter-sort').value;
 
-  const grid = document.getElementById('featured-grid');
-  featuredData.forEach((p, i) => {
-    grid.innerHTML += `
-      <article class="card-listing animate-fade-up delay-${(i%6)+1}" onclick="window.location='listing-detail.html'">
+    if (type) list = list.filter(r => r.type === type);
+
+    if (price === '500')  list = list.filter(r => r.price < 500);
+    else if (price === '800')  list = list.filter(r => r.price >= 500 && r.price <= 800);
+    else if (price === '1200') list = list.filter(r => r.price > 800 && r.price <= 1200);
+    else if (price === '1201') list = list.filter(r => r.price > 1200);
+
+    if (sort === 'price-asc')  list.sort((a, b) => a.price - b.price);
+    else if (sort === 'price-desc') list.sort((a, b) => b.price - a.price);
+    else list.sort((a, b) => a.added - b.added);
+
+    return list;
+  }
+
+  const typeLabels = { private: 'Private Room', studio: 'Studio', shared: 'Shared Room' };
+  const priceLabels = { '500': 'Under $500/mo', '800': '$500 – $800/mo', '1200': '$800 – $1,200/mo', '1201': '$1,200+/mo' };
+
+  function renderCard(r) {
+    const alt = (typeLabels[r.type] || r.type) + ' in ' + r.loc;
+    const newBadge = r.added <= 3 ? '<span class="card-listing__new-badge" aria-label="New listing">New</span>' : '';
+    return `
+      <article class="card-listing" role="link" tabindex="0"
+               onclick="window.location='listing-detail.html'"
+               onkeydown="if(event.key==='Enter')window.location='listing-detail.html'">
         <div class="card-listing__img-wrap">
-          <img src="https://picsum.photos/seed/prop${p.id}/800/600" alt="${p.title}" class="card-listing__img" loading="lazy" width="800" height="600">
-          <div class="card-listing__badges">
-            <span class="badge badge--${typeClass[p.type]}">${p.label}</span>
-          </div>
-          <span class="card-listing__lister card-listing__lister--${listerMod[p.lister]}"><i class="fa-solid ${listerIcon[p.lister]}" aria-hidden="true"></i>${p.lister}</span>
-          <button class="card-listing__fav" aria-label="Save to favourites">
-            <i class="fa-regular fa-heart" aria-hidden="true"></i>
-          </button>
+          <img src="https://picsum.photos/seed/room${r.id}/800/600"
+               alt="${alt}" class="card-listing__img" loading="lazy" width="800" height="600">
+          ${newBadge}
         </div>
         <div class="card-listing__body">
-          <div class="card-listing__price">${p.price}</div>
-          <h3 class="card-listing__title">${p.title}</h3>
-          <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${p.loc}</p>
-          <div class="card-listing__meta">
-            <span class="card-listing__meta-item"><i class="fa-solid fa-bed" aria-hidden="true"></i><span><strong>${p.beds}</strong> bed${p.beds>1?'s':''}</span></span>
-            <span class="card-listing__meta-item"><i class="fa-solid fa-bath" aria-hidden="true"></i><span><strong>${p.baths}</strong> bath</span></span>
-            <span class="card-listing__meta-item"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i><span><strong>${p.area}</strong> sq ft</span></span>
-          </div>
+          <div class="card-listing__price">$${r.price.toLocaleString()}<span class="card-listing__per">/mo</span></div>
+          <h3 class="card-listing__title">${r.title}</h3>
+          <p class="card-listing__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${r.loc}, OKC</p>
         </div>
       </article>`;
+  }
+
+  function renderChips() {
+    const chips = document.getElementById('filter-chips');
+    const price = document.getElementById('filter-price').value;
+    const type  = document.getElementById('filter-type').value;
+    const active = [];
+    if (price) active.push({ id: 'filter-price', label: priceLabels[price] });
+    if (type)  active.push({ id: 'filter-type',  label: typeLabels[type] });
+    chips.innerHTML = active.map(function(f) {
+      return '<button class="filter-chip" onclick="setFilter(\'' + f.id + '\', \'\')" aria-label="Remove filter: ' + f.label + '">'
+        + f.label + ' <i class="fa-solid fa-xmark" aria-hidden="true"></i></button>';
+    }).join('');
+  }
+
+  function renderGrid() {
+    const filtered = getFiltered();
+    const grid  = document.getElementById('home-listing-grid');
+    const total = document.getElementById('listing-count');
+    const label = filtered.length + ' room' + (filtered.length !== 1 ? 's' : '');
+
+    grid.innerHTML = filtered.length
+      ? filtered.map(renderCard).join('')
+      : '<div class="listing-empty" style="grid-column:1/-1">'
+          + '<i class="fa-solid fa-door-open listing-empty__icon" aria-hidden="true"></i>'
+          + '<h3 class="listing-empty__title">No rooms match your filters</h3>'
+          + '<p class="listing-empty__text">Try adjusting your search — there might be more options than you think.</p>'
+          + '<button class="btn btn--outline" onclick="clearFilters()">Clear all filters</button>'
+          + '</div>';
+
+    total.textContent = label;
+    renderChips();
+  }
+
+  function clearFilters() {
+    document.getElementById('filter-price').value = '';
+    document.getElementById('filter-type').value = '';
+    document.getElementById('filter-sort').value = 'newest';
+    renderGrid();
+  }
+
+  function setFilter(id, val) {
+    document.getElementById(id).value = val;
+    renderGrid();
+    document.getElementById('home-listing-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  ['filter-price', 'filter-type', 'filter-sort'].forEach(function(id) {
+    document.getElementById(id).addEventListener('change', renderGrid);
   });
+
+  renderGrid();
 </script>
 </body>
 </html>
